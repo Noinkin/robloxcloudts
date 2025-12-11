@@ -1,0 +1,30 @@
+{
+  "name": "robloxcloudts",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Noinkin/robloxcloudts#readme",
+  "bugs": {
+    "url": "https://github.com/Noinkin/robloxcloudts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noinkin/robloxcloudts.git"
+  },
+  "license": "ISC",
+  "author": "noinkin",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx prettier . --write && tsc",
+    "start": "node dist/cli/index.js",
+    "dev": "ts-node src/cli/index.ts",
+    "test": "node dist/test/test.js",
+    "docs:build": "npx prettier . --write && tsc && node --stack-size=65500 docgen.js"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "jsdoc-to-markdown": "^7.1.1",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
+  }
+}
