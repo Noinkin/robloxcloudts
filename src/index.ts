@@ -1,3 +1,8 @@
 // Client
-export { RobloxClient, RobloxEvents, ResourceEvents, ResourceAction } from './client/client.js'
-export { buildResourceEvent } from './client/polling.js'
+export {
+    RobloxClient,
+    RobloxEvents,
+    ResourceEvents,
+    ResourceAction,
+} from "./client/client.js";
+export { buildResourceEvent } from "./client/polling.js";
