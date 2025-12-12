@@ -1,10 +1,56 @@
 import {
     ContentTypes,
     RequestTypes,
+    ResourceAction,
     ResourceEvents,
+    RobloxEvents,
 } from "../client/client.js";
-import type { PollingOptions, ResourcePoller } from "../client/polling.js";
+import {
+    buildResourceEvent,
+    type PollingOptions,
+    type ResourcePoller,
+} from "../client/polling.js";
 import { BaseManager } from "../events/base.js";
+
+export interface DeveloperProductData {
+    productId: number;
+    name: string;
+    description: string;
+    iconImageAssetId: number;
+    universeId: number;
+    isForSale: boolean;
+    storePageEnabled: boolean;
+    priceInformation: {
+        defaultPriceInRobux: number;
+        enabledFeatures: string[];
+    };
+    isImmutable: boolean;
+    createdTimestamp: string;
+    updatedTimestamp: string;
+}
+
+export interface DeveloperProductLocalizedInfoArray {
+    data: {
+        name: string;
+        description: string;
+        updateType: string;
+        languageCode: string;
+    }[];
+}
+
+export interface DeveloperProductLocalizedInfo {
+    name: string;
+    description: string;
+}
+
+export interface DeveloperProductLocalizedIconArray {
+    data: {
+        targetId: number;
+        state: string;
+        imageUrl: string;
+        version: string;
+    }[];
+}
 
 export interface developerProductOptions {
     name?: string;
@@ -12,7 +58,7 @@ export interface developerProductOptions {
     isForSale?: boolean;
     price?: number;
     imageFile?: Buffer;
-    isRegionalPricingEnabled: boolean;
+    isRegionalPricingEnabled?: boolean;
 }
 
 export interface developerProductImageSizeOptions {
@@ -36,7 +82,252 @@ export enum DeveloperProductThumbnailFormats {
     Webp = "Webp",
 }
 
+export interface DeveloperProductWatch {
+    onCreate: (callback: (...productData: any[]) => void) => any;
+    onUpdate: (callback: (...productData: any[]) => void) => any;
+    onDelete: (callback: (...productData: any[]) => void) => any;
+    stop: () => void;
+}
+
+export class DeveloperProduct {
+    public readonly productId: number;
+    public name!: string;
+    public description!: string;
+    public iconImageAssetId!: number;
+    public readonly universeId: number;
+    public isForSale!: boolean;
+    public storePageEnabled!: boolean;
+    public priceInformation!: {
+        defaultPriceInRobux: number;
+        enabledFeatures: string[];
+    };
+    public readonly isImmutable: boolean;
+    public readonly createdTimestamp: Date;
+    public updatedTimestamp!: Date;
+
+    private manager: DeveloperProductsManager;
+
+    constructor(manager: DeveloperProductsManager, data: DeveloperProductData) {
+        this.productId = data.productId;
+        this.universeId = data.universeId;
+        this.isImmutable = data.isImmutable;
+        this.createdTimestamp = new Date(data.createdTimestamp);
+        this.manager = manager;
+        this._patch(data);
+    }
+
+    private _patch(data: DeveloperProductData | DeveloperProduct): void {
+        this.name = data.name;
+        this.description = data.description;
+        this.iconImageAssetId = data.iconImageAssetId;
+        this.isForSale = data.isForSale;
+        this.storePageEnabled = data.storePageEnabled;
+        this.priceInformation = data.priceInformation;
+        this.updatedTimestamp = new Date(data.updatedTimestamp);
+    }
+
+    async fetch(): Promise<this> {
+        const data = await this.manager.get(this.universeId, this.productId);
+        this._patch(data);
+        return this;
+    }
+
+    async edit(
+        options: developerProductOptions & { storePageEnabled?: boolean },
+    ): Promise<this> {
+        const data = await this.manager.update(
+            this.universeId,
+            this.productId,
+            options,
+        );
+        this._patch(data);
+        return this;
+    }
+
+    async setName(name: string): Promise<this> {
+        return this.edit({ name });
+    }
+
+    async setDescription(description: string): Promise<this> {
+        return this.edit({ description });
+    }
+
+    async setPrice(price: number): Promise<this> {
+        return this.edit({ price });
+    }
+
+    async setForSale(isForSale: boolean): Promise<this> {
+        return this.edit({ isForSale });
+    }
+
+    async setStorePageEnabled(enabled: boolean): Promise<this> {
+        return this.edit({ storePageEnabled: enabled });
+    }
+
+    async getLocalizedInfo(): Promise<DeveloperProductLocalizedInfoArray> {
+        return this.manager.getLocalizedInfo(this.productId);
+    }
+
+    async setLocalizedName(
+        languageCode: string,
+        name: string,
+    ): Promise<DeveloperProductLocalizedInfo> {
+        return this.manager.updateLocalizedName(
+            this.productId,
+            languageCode,
+            name,
+        );
+    }
+
+    async setLocalizedDescription(
+        languageCode: string,
+        description: string,
+    ): Promise<DeveloperProductLocalizedInfo> {
+        return this.manager.updateLocalizedDescription(
+            this.productId,
+            languageCode,
+            description,
+        );
+    }
+
+    async setLocalizedInfo(
+        languageCode: string,
+        name: string,
+        description: string,
+    ) {
+        return this.manager.updateLocalizedInfo(
+            this.productId,
+            languageCode,
+            name,
+            description,
+        );
+    }
+
+    async getThumbnail(
+        options: developerProductThumbnailOptions,
+    ): Promise<DeveloperProductLocalizedIconArray> {
+        return this.manager.getThumbnailIcons([this.productId], options);
+    }
+
+    async setLocalizedIcon(
+        languageCode: string,
+        imageFile: Buffer,
+    ): Promise<any> {
+        return this.manager.updateLocalizedIcon(
+            this.productId,
+            languageCode,
+            imageFile,
+        );
+    }
+
+    async deleteLocalizedIcon(languageCode: string): Promise<any> {
+        return this.manager.deleteLocalizedIcon(this.productId, languageCode);
+    }
+
+    async getIcon(options: developerProductImageSizeOptions): Promise<any> {
+        return this.manager.getIcons(this.productId, options);
+    }
+
+    equals(other: DeveloperProduct): boolean {
+        return (
+            this.productId === other.productId &&
+            this.updatedTimestamp.getTime() === other.updatedTimestamp.getTime()
+        );
+    }
+
+    get url(): string {
+        return `https://www.roblox.com/game-pass/${this.productId}`;
+    }
+
+    get price(): number {
+        return this.priceInformation.defaultPriceInRobux;
+    }
+
+    get createdAt(): number {
+        return this.createdTimestamp.getTime();
+    }
+
+    get updatedAt(): number {
+        return this.updatedTimestamp.getTime();
+    }
+
+    toJSON(): DeveloperProductData {
+        return {
+            productId: this.productId,
+            name: this.name,
+            description: this.description,
+            iconImageAssetId: this.iconImageAssetId,
+            universeId: this.universeId,
+            isForSale: this.isForSale,
+            storePageEnabled: this.storePageEnabled,
+            priceInformation: this.priceInformation,
+            isImmutable: this.isImmutable,
+            createdTimestamp: this.createdTimestamp.toISOString(),
+            updatedTimestamp: this.updatedTimestamp.toISOString(),
+        };
+    }
+
+    toString(): string {
+        return `DeveloperProduct[${this.productId}] ${this.name}`;
+    }
+}
+
 export class DeveloperProductsManager extends BaseManager {
+    watch(universeId: number, options?: PollingOptions): DeveloperProductWatch {
+        const universeStr = universeId.toString();
+
+        const watcherSetup = () => {
+            this.client.polling.startPolling(
+                ResourceEvents.DeveloperProduct,
+                universeStr,
+                () => this.getAll(universeId),
+                {
+                    interval: options?.interval || 10000,
+                    immediate: options?.immediate ?? true,
+                    compareBy: "productId",
+                    ...options,
+                },
+            );
+        };
+
+        if (this.client.ready) {
+            watcherSetup();
+        } else {
+            this.client.once(RobloxEvents.Ready, watcherSetup);
+        }
+
+        return {
+            onCreate: (callback: (...productData: any) => void) => {
+                const event = buildResourceEvent(
+                    ResourceEvents.DeveloperProduct,
+                    ResourceAction.Create,
+                    universeStr,
+                );
+                this.client.on(event, callback);
+                return this;
+            },
+            onUpdate: (callback: (...productData: any) => void) => {
+                const event = buildResourceEvent(
+                    ResourceEvents.DeveloperProduct,
+                    ResourceAction.Update,
+                    universeStr,
+                );
+                this.client.on(event, callback);
+                return this;
+            },
+            onDelete: (callback: (...productData: any) => void) => {
+                const event = buildResourceEvent(
+                    ResourceEvents.DeveloperProduct,
+                    ResourceAction.Delete,
+                    universeStr,
+                );
+                this.client.on(event as string, callback);
+                return this;
+            },
+            stop: () => this.stopPolling(universeId),
+        };
+    }
+
     startPolling(universeId: number, options?: PollingOptions): ResourcePoller {
         return this.client.polling.startPolling(
             ResourceEvents.DeveloperProduct,
@@ -58,22 +349,32 @@ export class DeveloperProductsManager extends BaseManager {
         );
     }
 
-    async get(universeId: number, productId: number): Promise<any> {
-        return this.request({
+    async _convert(data: any) {
+        const product = new DeveloperProduct(this, data);
+        return product;
+    }
+
+    async get(
+        universeId: number,
+        productId: number,
+    ): Promise<DeveloperProduct> {
+        const data = await this.request({
             method: RequestTypes.Get,
             endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products/${productId}/creator`,
         });
+        return this._convert(data);
     }
 
     async create(
         universeId: number,
         options: developerProductOptions & { name: string },
     ): Promise<any> {
-        return this.request({
+        const data = await this.request({
             method: RequestTypes.Post,
             endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products`,
             body: options,
         });
+        return this._convert(data);
     }
 
     async update(
@@ -81,11 +382,12 @@ export class DeveloperProductsManager extends BaseManager {
         productId: number,
         options: developerProductOptions & { storePageEnabled?: boolean },
     ): Promise<any> {
-        return this.request({
+        const data = await this.request({
             method: RequestTypes.Patch,
             endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products/${productId}`,
             body: options,
         });
+        return this._convert(data);
     }
 
     async getAll(universeId: number): Promise<any> {
@@ -110,7 +412,7 @@ export class DeveloperProductsManager extends BaseManager {
             pageToken = response.nextPageToken;
         } while (pageToken);
 
-        return allProducts;
+        return allProducts.map((data) => this._convert(data));
     }
 
     async getIcons(
@@ -128,7 +430,7 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async deleteLocalizedIcon(
-        productId: number | string,
+        productId: number,
         languageCode: string,
     ): Promise<any> {
         return this.request({
@@ -138,7 +440,7 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async updateLocalizedIcon(
-        productId: number | string,
+        productId: number,
         languageCode: string,
         imageFile: Buffer,
     ): Promise<any> {
@@ -150,7 +452,9 @@ export class DeveloperProductsManager extends BaseManager {
         });
     }
 
-    async getLocalizedInfo(productId: number | string): Promise<any> {
+    async getLocalizedInfo(
+        productId: number,
+    ): Promise<DeveloperProductLocalizedInfoArray> {
         return this.request({
             method: RequestTypes.Get,
             endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name-description`,
@@ -158,7 +462,7 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async deleteLocalizedInfo(
-        productId: number | string,
+        productId: number,
         languageCode: string,
     ): Promise<any> {
         return this.request({
@@ -168,11 +472,11 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async updateLocalizedInfo(
-        productId: number | string,
+        productId: number,
         languageCode: string,
         name: string,
         description: string,
-    ): Promise<any> {
+    ): Promise<DeveloperProductLocalizedInfo> {
         return this.request({
             method: RequestTypes.Patch,
             endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name-description/language-codes/${languageCode}`,
@@ -184,10 +488,10 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async updateLocalizedName(
-        productId: number | string,
+        productId: number,
         languageCode: string,
         name: string,
-    ): Promise<any> {
+    ): Promise<DeveloperProductLocalizedInfo> {
         return this.request({
             method: RequestTypes.Patch,
             endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name/language-codes/${languageCode}`,
@@ -201,7 +505,7 @@ export class DeveloperProductsManager extends BaseManager {
         productId: number,
         languageCode: string,
         description: string,
-    ): Promise<any> {
+    ): Promise<DeveloperProductLocalizedInfo> {
         return this.request({
             method: RequestTypes.Patch,
             endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/description/language-codes/${languageCode}`,
@@ -211,10 +515,10 @@ export class DeveloperProductsManager extends BaseManager {
         });
     }
 
-    async thumbnailIcons(
+    async getThumbnailIcons(
         productIds: number[],
         options: developerProductThumbnailOptions,
-    ): Promise<any> {
+    ): Promise<DeveloperProductLocalizedIconArray> {
         const params: Record<string, string | boolean | number[]> = {};
         params["developerProductIds"] = productIds;
         if (options.size) params["size"] = options.size;

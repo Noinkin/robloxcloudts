@@ -1,8 +1,12 @@
 // Client
-export {
-    RobloxClient,
-    RobloxEvents,
-    ResourceEvents,
-    ResourceAction,
-} from "./client/client.js";
-export { buildResourceEvent } from "./client/polling.js";
+export * from "./client/client.js";
+export * from "./client/polling.js";
+
+// Base
+export * from "./events/base.js";
+
+// Developer Products
+export * from "./developerproducts/developerproducts.js";
+
+// Util
+export * from "./util/errors.js";

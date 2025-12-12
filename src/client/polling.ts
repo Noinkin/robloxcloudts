@@ -20,12 +20,17 @@ export interface PollingConfig<T = any> {
     interval?: NodeJS.Timeout | undefined;
 }
 
+export type ResourceEventIdString =
+    `${ResourceEvents}:${string}:${PollingEvents}`;
+export type ResourceEventString = `${ResourceEvents}:${PollingEvents}`;
+
 export function buildResourceEvent(
     resource: ResourceEvents,
-    id: string,
     action: PollingEvents,
-): string {
-    return `${resource}:${id}:${action}`;
+    id?: string,
+): ResourceEventString | ResourceEventIdString {
+    if (id) return `${resource}:${id}:${action}`;
+    return `${resource}:${action}`;
 }
 
 export class ResourcePoller<T = any> {

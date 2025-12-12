@@ -29,5 +29,7 @@
         "isolatedModules": true,
         "moduleDetection": "force",
         "skipLibCheck": true
-    }
+    },
+    "include": ["src"],
+    "exclude": ["typedoc.config.mjs"]
 }

@@ -1,102 +1,212 @@
 import { EventEmitter } from "events";
 import { RateLimitError, RobloxAPIError } from "../util/errors.js";
 import { DeveloperProductsManager } from "../developerproducts/developerproducts.js";
-import { PollingManager } from "./polling.js";
+import {
+    PollingManager,
+    type ResourceEventString,
+    type ResourceEventIdString,
+} from "./polling.js";
 
+/**
+ * Type for creating a Roblox API Client
+ */
 export interface ClientOptions {
+    /** API Key to use Roblox API */
     apiKey: string;
-    retries: number;
-    retryDelay: number;
+    /** The amount of times to retry if any errorr occur */
+    retries?: number;
+    /** The delay between retries if any errors occur */
+    retryDelay?: number;
 }
 
+/**
+ * Type for displaying rate limits
+ */
 export interface RateLimitData {
+    /** Total limit over selected time period */
     limit: number;
+    /** Requests left over selected time period */
     remaining: number;
+    /** When time period ends */
     reset: number;
 }
 
+/**
+ * Type for sending a request from the client
+ */
 export interface RequestOptions {
+    /** Request Method */
     method: "GET" | "POST" | "PATCH" | "DELETE" | "PUT";
+    /** Request Endpoint, must contain full Roblox URL */
     endpoint: string;
+    /** Request Body */
     body?: any;
+    /** Request Params */
     params?: Record<string, any>;
+    /** Request Headers */
     headers?: Record<string, string>;
+    /** Request Content Type */
     contentType?: ContentTypes;
 }
 
+/**
+ * Enumeration for Request Types
+ */
 export enum RequestTypes {
+    /** Get Request */
     Get = "GET",
+    /** Post Request */
     Post = "POST",
+    /** Patch Request */
     Patch = "PATCH",
+    /** Delete Request */
     Delete = "DELETE",
+    /** Put Request */
     Put = "PUT",
 }
 
+/**
+ * Enumeration for Content Types
+ */
 export enum ContentTypes {
+    /** application/json Content */
     Json = "application/json",
+    /** application/x-www-form-urlencoded Content */
     Form = "application/x-www-form-urlencoded",
+    /** multipart/form-data Content */
     MultipartForm = "multipart/form-data",
 }
 
 // Events
 
+/**
+ * Type for Rate Limit Events from the client
+ */
 export interface RateLimitEvent {
+    /** Endpoint the event came from */
     endpoint: string;
+    /** Time before next retry */
     waitTime: number;
+    /** Limit of requests over a set time period */
     limit: number;
+    /** Requests remaining over set time period */
     remaining: number;
+    /** Time remaining of set time period */
     reset: number;
 }
 
+/**
+ * Type for API Response Events from the client
+ */
 export interface ApiResponseEvent {
+    /** Endpoint the event came from */
     endpoint: string;
+    /** API Method used */
     method: string;
+    /** API Response Status */
     status: number;
+    /** Response Data */
     data: any;
 }
 
+/**
+ * Type for API Request Events from the client
+ */
 export interface ApiRequestEvent {
+    /** Endpoint the event was sent to */
     endpoint: string;
+    /** API Method used */
     method: string;
+    /** Request Data */
     body?: any;
 }
 
+/**
+ * Type for API Error Events from the client
+ */
 export interface ApiErrorEvent {
+    /** The error that occured */
     error: Error;
+    /** The endpoint the error was thrown from */
     endpoint: string;
+    /** The API Method used at the endpoint */
     method: string;
+    /** The API Status returned */
     status?: number;
 }
 
+/**
+ * Enumeration for general events
+ */
 export enum RobloxEvents {
+    /** Fired when the client is able to send API Requests */
     Ready = "READY",
+    /** Fired for debugging on smaller actions */
     Debug = "DEBUG",
+    /** Fired when an error occurs */
     Error = "ERROR",
+    /** Fired when a rate limit is reached */
     RateLimit = "RATE_LIMIT",
+    /** Fired when an API Response is recieved */
     ApiResponse = "API_RESPONSE",
+    /** Fired when an API Request is sent */
     ApiRequest = "API_REQUEST",
+    /** Fired when there is a minor error */
     Warn = "WARN",
 }
 
+/**
+ * Enumeration for roblox events
+ */
 export enum ResourceEvents {
+    /** Fired when there is changes made to Developer Products */
     DeveloperProduct = "DEVELOPER_PRODUCT",
 }
 
+/**
+ * Enumeration for roblox event actions
+ */
 export enum ResourceAction {
+    /** Fired when an item is created */
     Create = "CREATE",
+    /** Fired when an item is updated */
     Update = "UPDATE",
+    /** Fired when an item is deleted */
     Delete = "DELETE",
 }
 
+/**
+ * Type for event handler args
+ */
 export interface ClientEvents {
+    /**
+     * Ready event defined in {@link RobloxEvents}
+     */
     ready: [];
+    /**
+     * Debug event defined in {@link RobloxEvents}
+     */
     debug: [message: string];
+    /**
+     * Error event defined in {@link RobloxEvents}
+     */
     error: [error: ApiErrorEvent];
+    /**
+     * Ratelimit event defined in {@link RobloxEvents}
+     */
     rateLimit: [data: RateLimitEvent];
+    /**
+     * API Response event defined in {@link RobloxEvents}
+     */
     apiResponse: [data: ApiResponseEvent];
+    /**
+     * API Request event defined in {@link RobloxEvents}
+     */
     apiRequest: [data: ApiRequestEvent];
+    /**
+     * Warn event defined in {@link RobloxEvents}
+     */
     warn: [message: string];
-    [key: `${ResourceEvents}:${string}:${ResourceAction}`]: [data: any];
 }
 
 export declare interface RobloxClient {
@@ -104,19 +214,38 @@ export declare interface RobloxClient {
         event: RobloxEvents,
         listener: (...args: ClientEvents[K]) => void,
     ): this;
+    on(
+        event: ResourceEventIdString | ResourceEventString | string,
+        listener: (...args: any[]) => void,
+    ): this;
     once<K extends keyof ClientEvents>(
         event: RobloxEvents,
         listener: (...args: ClientEvents[K]) => void,
+    ): this;
+    once(
+        event: ResourceEventIdString | ResourceEventString | string,
+        listener: (...args: any[]) => void,
     ): this;
     emit<K extends keyof ClientEvents>(
         event: RobloxEvents,
         ...args: ClientEvents[K]
     ): boolean;
+    emit(
+        event: ResourceEventIdString | ResourceEventString | string,
+        ...args: any[]
+    ): boolean;
     off<K extends keyof ClientEvents>(
         event: RobloxEvents,
         listener: (...args: ClientEvents[K]) => void,
     ): this;
+    off(
+        event: ResourceEventIdString | ResourceEventString | string,
+        listener: (...args: any[]) => void,
+    ): this;
     removeAllListeners<K extends keyof ClientEvents>(event?: K): this;
+    removeAllListeners(
+        event: ResourceEventIdString | ResourceEventString | string,
+    ): this;
 }
 
 export class RobloxClient extends EventEmitter {

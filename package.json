@@ -13,18 +13,21 @@
     "license": "ISC",
     "author": "noinkin",
     "type": "module",
-    "main": "dist/index.js",
+    "main": "src/index.ts",
+    "tyoes": "src/index.ts",
     "scripts": {
         "build": "npx prettier . --write && tsc",
         "start": "node dist/cli/index.js",
         "dev": "ts-node src/cli/index.ts",
         "test": "node dist/test/test.js",
-        "docs:build": "npx prettier . --write && tsc && node --stack-size=65500 docgen.js"
+        "docs:build": "npx prettier . --write && tsc && npx typedoc"
     },
     "devDependencies": {
         "@types/node": "^25.0.0",
         "jsdoc-to-markdown": "^7.1.1",
         "prettier": "^3.7.4",
+        "typedoc": "^0.28.15",
+        "typedoc-plugin-markdown": "^4.9.0",
         "typescript": "^5.9.3"
     }
 }
