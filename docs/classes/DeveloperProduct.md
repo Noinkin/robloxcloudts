@@ -6,7 +6,7 @@
 
 # Class: DeveloperProduct
 
-Defined in: src/developerproducts/developerproducts.ts:92
+Defined in: src/universe/developerProducts.ts:92
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: src/developerproducts/developerproducts.ts:92
 
 > **new DeveloperProduct**(`manager`, `data`): `DeveloperProduct`
 
-Defined in: src/developerproducts/developerproducts.ts:110
+Defined in: src/universe/developerProducts.ts:110
 
 #### Parameters
 
@@ -33,7 +33,7 @@ Defined in: src/developerproducts/developerproducts.ts:110
 
 > `readonly` **createdTimestamp**: `Date`
 
-Defined in: src/developerproducts/developerproducts.ts:105
+Defined in: src/universe/developerProducts.ts:105
 
 ***
 
@@ -41,7 +41,7 @@ Defined in: src/developerproducts/developerproducts.ts:105
 
 > **description**: `string`
 
-Defined in: src/developerproducts/developerproducts.ts:95
+Defined in: src/universe/developerProducts.ts:95
 
 ***
 
@@ -49,7 +49,7 @@ Defined in: src/developerproducts/developerproducts.ts:95
 
 > **iconImageAssetId**: `number`
 
-Defined in: src/developerproducts/developerproducts.ts:96
+Defined in: src/universe/developerProducts.ts:96
 
 ***
 
@@ -57,7 +57,7 @@ Defined in: src/developerproducts/developerproducts.ts:96
 
 > **isForSale**: `boolean`
 
-Defined in: src/developerproducts/developerproducts.ts:98
+Defined in: src/universe/developerProducts.ts:98
 
 ***
 
@@ -65,7 +65,7 @@ Defined in: src/developerproducts/developerproducts.ts:98
 
 > `readonly` **isImmutable**: `boolean`
 
-Defined in: src/developerproducts/developerproducts.ts:104
+Defined in: src/universe/developerProducts.ts:104
 
 ***
 
@@ -73,7 +73,7 @@ Defined in: src/developerproducts/developerproducts.ts:104
 
 > **name**: `string`
 
-Defined in: src/developerproducts/developerproducts.ts:94
+Defined in: src/universe/developerProducts.ts:94
 
 ***
 
@@ -81,7 +81,7 @@ Defined in: src/developerproducts/developerproducts.ts:94
 
 > **priceInformation**: \{ `defaultPriceInRobux`: `number`; `enabledFeatures`: `string`[]; \}
 
-Defined in: src/developerproducts/developerproducts.ts:100
+Defined in: src/universe/developerProducts.ts:100
 
 #### defaultPriceInRobux
 
@@ -97,7 +97,7 @@ Defined in: src/developerproducts/developerproducts.ts:100
 
 > `readonly` **productId**: `number`
 
-Defined in: src/developerproducts/developerproducts.ts:93
+Defined in: src/universe/developerProducts.ts:93
 
 ***
 
@@ -105,7 +105,7 @@ Defined in: src/developerproducts/developerproducts.ts:93
 
 > **storePageEnabled**: `boolean`
 
-Defined in: src/developerproducts/developerproducts.ts:99
+Defined in: src/universe/developerProducts.ts:99
 
 ***
 
@@ -113,7 +113,7 @@ Defined in: src/developerproducts/developerproducts.ts:99
 
 > `readonly` **universeId**: `number`
 
-Defined in: src/developerproducts/developerproducts.ts:97
+Defined in: src/universe/developerProducts.ts:97
 
 ***
 
@@ -121,7 +121,7 @@ Defined in: src/developerproducts/developerproducts.ts:97
 
 > **updatedTimestamp**: `Date`
 
-Defined in: src/developerproducts/developerproducts.ts:106
+Defined in: src/universe/developerProducts.ts:106
 
 ## Accessors
 
@@ -131,7 +131,7 @@ Defined in: src/developerproducts/developerproducts.ts:106
 
 > **get** **createdAt**(): `number`
 
-Defined in: src/developerproducts/developerproducts.ts:246
+Defined in: src/universe/developerProducts.ts:246
 
 ##### Returns
 
@@ -145,7 +145,7 @@ Defined in: src/developerproducts/developerproducts.ts:246
 
 > **get** **price**(): `number`
 
-Defined in: src/developerproducts/developerproducts.ts:242
+Defined in: src/universe/developerProducts.ts:242
 
 ##### Returns
 
@@ -159,7 +159,7 @@ Defined in: src/developerproducts/developerproducts.ts:242
 
 > **get** **updatedAt**(): `number`
 
-Defined in: src/developerproducts/developerproducts.ts:250
+Defined in: src/universe/developerProducts.ts:250
 
 ##### Returns
 
@@ -173,7 +173,7 @@ Defined in: src/developerproducts/developerproducts.ts:250
 
 > **get** **url**(): `string`
 
-Defined in: src/developerproducts/developerproducts.ts:238
+Defined in: src/universe/developerProducts.ts:238
 
 ##### Returns
 
@@ -185,7 +185,7 @@ Defined in: src/developerproducts/developerproducts.ts:238
 
 > **deleteLocalizedIcon**(`languageCode`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:223
+Defined in: src/universe/developerProducts.ts:223
 
 #### Parameters
 
@@ -203,7 +203,7 @@ Defined in: src/developerproducts/developerproducts.ts:223
 
 > **edit**(`options`): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:135
+Defined in: src/universe/developerProducts.ts:135
 
 #### Parameters
 
@@ -221,7 +221,7 @@ Defined in: src/developerproducts/developerproducts.ts:135
 
 > **equals**(`other`): `boolean`
 
-Defined in: src/developerproducts/developerproducts.ts:231
+Defined in: src/universe/developerProducts.ts:231
 
 #### Parameters
 
@@ -239,7 +239,7 @@ Defined in: src/developerproducts/developerproducts.ts:231
 
 > **fetch**(): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:129
+Defined in: src/universe/developerProducts.ts:129
 
 #### Returns
 
@@ -251,7 +251,7 @@ Defined in: src/developerproducts/developerproducts.ts:129
 
 > **getIcon**(`options`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:227
+Defined in: src/universe/developerProducts.ts:227
 
 #### Parameters
 
@@ -269,7 +269,7 @@ Defined in: src/developerproducts/developerproducts.ts:227
 
 > **getLocalizedInfo**(): `Promise`\<[`DeveloperProductLocalizedInfoArray`](../interfaces/DeveloperProductLocalizedInfoArray.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:167
+Defined in: src/universe/developerProducts.ts:167
 
 #### Returns
 
@@ -281,7 +281,7 @@ Defined in: src/developerproducts/developerproducts.ts:167
 
 > **getThumbnail**(`options`): `Promise`\<[`DeveloperProductLocalizedIconArray`](../interfaces/DeveloperProductLocalizedIconArray.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:206
+Defined in: src/universe/developerProducts.ts:206
 
 #### Parameters
 
@@ -299,7 +299,7 @@ Defined in: src/developerproducts/developerproducts.ts:206
 
 > **setDescription**(`description`): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:151
+Defined in: src/universe/developerProducts.ts:151
 
 #### Parameters
 
@@ -317,7 +317,7 @@ Defined in: src/developerproducts/developerproducts.ts:151
 
 > **setForSale**(`isForSale`): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:159
+Defined in: src/universe/developerProducts.ts:159
 
 #### Parameters
 
@@ -335,7 +335,7 @@ Defined in: src/developerproducts/developerproducts.ts:159
 
 > **setLocalizedDescription**(`languageCode`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:182
+Defined in: src/universe/developerProducts.ts:182
 
 #### Parameters
 
@@ -354,7 +354,7 @@ Defined in: src/developerproducts/developerproducts.ts:182
 
 > **setLocalizedIcon**(`languageCode`, `imageFile`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:212
+Defined in: src/universe/developerProducts.ts:212
 
 #### Parameters
 
@@ -373,7 +373,7 @@ Defined in: src/developerproducts/developerproducts.ts:212
 
 > **setLocalizedInfo**(`languageCode`, `name`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:193
+Defined in: src/universe/developerProducts.ts:193
 
 #### Parameters
 
@@ -393,7 +393,7 @@ Defined in: src/developerproducts/developerproducts.ts:193
 
 > **setLocalizedName**(`languageCode`, `name`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:171
+Defined in: src/universe/developerProducts.ts:171
 
 #### Parameters
 
@@ -412,7 +412,7 @@ Defined in: src/developerproducts/developerproducts.ts:171
 
 > **setName**(`name`): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:147
+Defined in: src/universe/developerProducts.ts:147
 
 #### Parameters
 
@@ -430,7 +430,7 @@ Defined in: src/developerproducts/developerproducts.ts:147
 
 > **setPrice**(`price`): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:155
+Defined in: src/universe/developerProducts.ts:155
 
 #### Parameters
 
@@ -448,7 +448,7 @@ Defined in: src/developerproducts/developerproducts.ts:155
 
 > **setStorePageEnabled**(`enabled`): `Promise`\<`DeveloperProduct`\>
 
-Defined in: src/developerproducts/developerproducts.ts:163
+Defined in: src/universe/developerProducts.ts:163
 
 #### Parameters
 
@@ -466,7 +466,7 @@ Defined in: src/developerproducts/developerproducts.ts:163
 
 > **toJSON**(): [`DeveloperProductData`](../interfaces/DeveloperProductData.md)
 
-Defined in: src/developerproducts/developerproducts.ts:254
+Defined in: src/universe/developerProducts.ts:254
 
 #### Returns
 
@@ -478,7 +478,7 @@ Defined in: src/developerproducts/developerproducts.ts:254
 
 > **toString**(): `string`
 
-Defined in: src/developerproducts/developerproducts.ts:270
+Defined in: src/universe/developerProducts.ts:270
 
 #### Returns
 

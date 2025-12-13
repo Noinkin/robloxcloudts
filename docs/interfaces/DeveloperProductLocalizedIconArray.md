@@ -6,10 +6,10 @@
 
 # Interface: DeveloperProductLocalizedIconArray
 
-Defined in: src/developerproducts/developerproducts.ts:46
+Defined in: src/universe/developerProducts.ts:46
 
 ## Properties
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="data"></a> `data` | \{ `imageUrl`: `string`; `state`: `string`; `targetId`: `number`; `version`: `string`; \}[] | src/developerproducts/developerproducts.ts:47 |
+| <a id="data"></a> `data` | \{ `imageUrl`: `string`; `state`: `string`; `targetId`: `number`; `version`: `string`; \}[] | src/universe/developerProducts.ts:47 |

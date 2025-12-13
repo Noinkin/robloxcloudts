@@ -6,10 +6,10 @@
 
 # Interface: DeveloperProductLocalizedInfoArray
 
-Defined in: src/developerproducts/developerproducts.ts:32
+Defined in: src/universe/developerProducts.ts:32
 
 ## Properties
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="data"></a> `data` | \{ `description`: `string`; `languageCode`: `string`; `name`: `string`; `updateType`: `string`; \}[] | src/developerproducts/developerproducts.ts:33 |
+| <a id="data"></a> `data` | \{ `description`: `string`; `languageCode`: `string`; `name`: `string`; `updateType`: `string`; \}[] | src/universe/developerProducts.ts:33 |

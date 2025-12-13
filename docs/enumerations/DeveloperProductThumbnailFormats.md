@@ -6,11 +6,11 @@
 
 # Enumeration: DeveloperProductThumbnailFormats
 
-Defined in: src/developerproducts/developerproducts.ts:80
+Defined in: src/universe/developerProducts.ts:80
 
 ## Enumeration Members
 
 | Enumeration Member | Value | Defined in |
 | ------ | ------ | ------ |
-| <a id="png"></a> `Png` | `"Png"` | src/developerproducts/developerproducts.ts:81 |
-| <a id="webp"></a> `Webp` | `"Webp"` | src/developerproducts/developerproducts.ts:82 |
+| <a id="png"></a> `Png` | `"Png"` | src/universe/developerProducts.ts:81 |
+| <a id="webp"></a> `Webp` | `"Webp"` | src/universe/developerProducts.ts:82 |

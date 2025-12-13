@@ -6,7 +6,7 @@
 
 # Class: DeveloperProductsManager
 
-Defined in: src/developerproducts/developerproducts.ts:275
+Defined in: src/universe/developerProducts.ts:275
 
 ## Extends
 
@@ -52,7 +52,7 @@ Defined in: src/events/base.ts:4
 
 > **\_convert**(`data`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:352
+Defined in: src/universe/developerProducts.ts:352
 
 #### Parameters
 
@@ -70,7 +70,7 @@ Defined in: src/developerproducts/developerproducts.ts:352
 
 > **create**(`universeId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:368
+Defined in: src/universe/developerProducts.ts:368
 
 #### Parameters
 
@@ -89,7 +89,7 @@ Defined in: src/developerproducts/developerproducts.ts:368
 
 > **deleteLocalizedIcon**(`productId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:432
+Defined in: src/universe/developerProducts.ts:432
 
 #### Parameters
 
@@ -108,7 +108,7 @@ Defined in: src/developerproducts/developerproducts.ts:432
 
 > **deleteLocalizedInfo**(`productId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:464
+Defined in: src/universe/developerProducts.ts:464
 
 #### Parameters
 
@@ -127,7 +127,7 @@ Defined in: src/developerproducts/developerproducts.ts:464
 
 > **get**(`universeId`, `productId`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:357
+Defined in: src/universe/developerProducts.ts:357
 
 #### Parameters
 
@@ -146,7 +146,7 @@ Defined in: src/developerproducts/developerproducts.ts:357
 
 > **getAll**(`universeId`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:393
+Defined in: src/universe/developerProducts.ts:393
 
 #### Parameters
 
@@ -164,7 +164,7 @@ Defined in: src/developerproducts/developerproducts.ts:393
 
 > **getIcons**(`productId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:418
+Defined in: src/universe/developerProducts.ts:418
 
 #### Parameters
 
@@ -183,7 +183,7 @@ Defined in: src/developerproducts/developerproducts.ts:418
 
 > **getLocalizedInfo**(`productId`): `Promise`\<[`DeveloperProductLocalizedInfoArray`](../interfaces/DeveloperProductLocalizedInfoArray.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:455
+Defined in: src/universe/developerProducts.ts:455
 
 #### Parameters
 
@@ -201,7 +201,7 @@ Defined in: src/developerproducts/developerproducts.ts:455
 
 > **getThumbnailIcons**(`productIds`, `options`): `Promise`\<[`DeveloperProductLocalizedIconArray`](../interfaces/DeveloperProductLocalizedIconArray.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:518
+Defined in: src/universe/developerProducts.ts:518
 
 #### Parameters
 
@@ -248,7 +248,7 @@ Defined in: src/events/base.ts:10
 
 > **startPolling**(`universeId`, `options?`): [`ResourcePoller`](ResourcePoller.md)
 
-Defined in: src/developerproducts/developerproducts.ts:331
+Defined in: src/universe/developerProducts.ts:331
 
 #### Parameters
 
@@ -267,7 +267,7 @@ Defined in: src/developerproducts/developerproducts.ts:331
 
 > **stopPolling**(`universeId`): `void`
 
-Defined in: src/developerproducts/developerproducts.ts:345
+Defined in: src/universe/developerProducts.ts:345
 
 #### Parameters
 
@@ -285,7 +285,7 @@ Defined in: src/developerproducts/developerproducts.ts:345
 
 > **update**(`universeId`, `productId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:380
+Defined in: src/universe/developerProducts.ts:380
 
 #### Parameters
 
@@ -305,7 +305,7 @@ Defined in: src/developerproducts/developerproducts.ts:380
 
 > **updateLocalizedDescription**(`productId`, `languageCode`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:504
+Defined in: src/universe/developerProducts.ts:504
 
 #### Parameters
 
@@ -325,7 +325,7 @@ Defined in: src/developerproducts/developerproducts.ts:504
 
 > **updateLocalizedIcon**(`productId`, `languageCode`, `imageFile`): `Promise`\<`any`\>
 
-Defined in: src/developerproducts/developerproducts.ts:442
+Defined in: src/universe/developerProducts.ts:442
 
 #### Parameters
 
@@ -345,7 +345,7 @@ Defined in: src/developerproducts/developerproducts.ts:442
 
 > **updateLocalizedInfo**(`productId`, `languageCode`, `name`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:474
+Defined in: src/universe/developerProducts.ts:474
 
 #### Parameters
 
@@ -366,7 +366,7 @@ Defined in: src/developerproducts/developerproducts.ts:474
 
 > **updateLocalizedName**(`productId`, `languageCode`, `name`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/developerproducts/developerproducts.ts:490
+Defined in: src/universe/developerProducts.ts:490
 
 #### Parameters
 
@@ -386,7 +386,7 @@ Defined in: src/developerproducts/developerproducts.ts:490
 
 > **watch**(`universeId`, `options?`): [`DeveloperProductWatch`](../interfaces/DeveloperProductWatch.md)
 
-Defined in: src/developerproducts/developerproducts.ts:276
+Defined in: src/universe/developerProducts.ts:276
 
 #### Parameters
 
