@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
 import { RateLimitError, RobloxAPIError } from "../util/errors.js";
-import { DeveloperProductsManager } from "../developerproducts/developerproducts.js";
+import { DeveloperProductsManager } from "../universe/developerProducts.js";
 import {
     PollingManager,
     type ResourceEventString,

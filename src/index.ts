@@ -6,7 +6,7 @@ export * from "./client/polling.js";
 export * from "./events/base.js";
 
 // Developer Products
-export * from "./developerproducts/developerproducts.js";
+export * from "./universe/developerProducts.js";
 
 // Util
 export * from "./util/errors.js";
