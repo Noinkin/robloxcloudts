@@ -209,7 +209,7 @@ export interface ClientEvents {
     warn: [message: string];
 }
 
-export declare interface RobloxClient {
+export declare interface RobloxClientTypings {
     on<K extends keyof ClientEvents>(
         event: RobloxEvents,
         listener: (...args: ClientEvents[K]) => void,
@@ -248,7 +248,7 @@ export declare interface RobloxClient {
     ): this;
 }
 
-export class RobloxClient extends EventEmitter {
+export class RobloxClient extends EventEmitter implements RobloxClientTypings {
     private apiKey: string;
     private rateLimits: Map<string, RateLimitData>;
     private retries: number;
