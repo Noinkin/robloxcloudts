@@ -2,9 +2,9 @@
 
 ***
 
-[robloxcloudts](../globals.md) / developerProductImageSizeOptions
+[robloxcloudts](../globals.md) / DeveloperProductImageSizeOptions
 
-# Interface: developerProductImageSizeOptions
+# Interface: DeveloperProductImageSizeOptions
 
 Defined in: src/universe/developerProducts.ts:64
 

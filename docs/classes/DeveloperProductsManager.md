@@ -77,7 +77,7 @@ Defined in: src/universe/developerProducts.ts:368
 | Parameter | Type |
 | ------ | ------ |
 | `universeId` | `number` |
-| `options` | [`developerProductOptions`](../interfaces/developerProductOptions.md) & \{ `name`: `string`; \} |
+| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `name`: `string`; \} |
 
 #### Returns
 
@@ -171,7 +171,7 @@ Defined in: src/universe/developerProducts.ts:418
 | Parameter | Type |
 | ------ | ------ |
 | `productId` | `number` |
-| `options` | [`developerProductImageSizeOptions`](../interfaces/developerProductImageSizeOptions.md) |
+| `options` | [`DeveloperProductImageSizeOptions`](../interfaces/DeveloperProductImageSizeOptions.md) |
 
 #### Returns
 
@@ -208,7 +208,7 @@ Defined in: src/universe/developerProducts.ts:518
 | Parameter | Type |
 | ------ | ------ |
 | `productIds` | `number`[] |
-| `options` | [`developerProductThumbnailOptions`](../interfaces/developerProductThumbnailOptions.md) |
+| `options` | [`DeveloperProductThumbnailOptions`](../interfaces/DeveloperProductThumbnailOptions.md) |
 
 #### Returns
 
@@ -293,7 +293,7 @@ Defined in: src/universe/developerProducts.ts:380
 | ------ | ------ |
 | `universeId` | `number` |
 | `productId` | `number` |
-| `options` | [`developerProductOptions`](../interfaces/developerProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} |
+| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} |
 
 #### Returns
 

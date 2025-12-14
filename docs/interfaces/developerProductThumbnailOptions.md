@@ -2,9 +2,9 @@
 
 ***
 
-[robloxcloudts](../globals.md) / developerProductThumbnailOptions
+[robloxcloudts](../globals.md) / DeveloperProductThumbnailOptions
 
-# Interface: developerProductThumbnailOptions
+# Interface: DeveloperProductThumbnailOptions
 
 Defined in: src/universe/developerProducts.ts:69
 

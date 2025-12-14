@@ -2,9 +2,9 @@
 
 ***
 
-[robloxcloudts](../globals.md) / developerProductOptions
+[robloxcloudts](../globals.md) / DeveloperProductOptions
 
-# Interface: developerProductOptions
+# Interface: DeveloperProductOptions
 
 Defined in: src/universe/developerProducts.ts:55
 

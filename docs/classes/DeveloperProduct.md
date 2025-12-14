@@ -209,7 +209,7 @@ Defined in: src/universe/developerProducts.ts:135
 
 | Parameter | Type |
 | ------ | ------ |
-| `options` | [`developerProductOptions`](../interfaces/developerProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} |
+| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} |
 
 #### Returns
 
@@ -257,7 +257,7 @@ Defined in: src/universe/developerProducts.ts:227
 
 | Parameter | Type |
 | ------ | ------ |
-| `options` | [`developerProductImageSizeOptions`](../interfaces/developerProductImageSizeOptions.md) |
+| `options` | [`DeveloperProductImageSizeOptions`](../interfaces/DeveloperProductImageSizeOptions.md) |
 
 #### Returns
 
@@ -287,7 +287,7 @@ Defined in: src/universe/developerProducts.ts:206
 
 | Parameter | Type |
 | ------ | ------ |
-| `options` | [`developerProductThumbnailOptions`](../interfaces/developerProductThumbnailOptions.md) |
+| `options` | [`DeveloperProductThumbnailOptions`](../interfaces/DeveloperProductThumbnailOptions.md) |
 
 #### Returns
 

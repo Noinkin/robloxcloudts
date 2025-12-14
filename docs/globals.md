@@ -39,18 +39,19 @@
 | [ClientEvents](interfaces/ClientEvents.md) | Type for event handler args |
 | [ClientOptions](interfaces/ClientOptions.md) | Type for creating a Roblox API Client |
 | [DeveloperProductData](interfaces/DeveloperProductData.md) | - |
-| [developerProductImageSizeOptions](interfaces/developerProductImageSizeOptions.md) | - |
+| [DeveloperProductImageSizeOptions](interfaces/DeveloperProductImageSizeOptions.md) | - |
 | [DeveloperProductLocalizedIconArray](interfaces/DeveloperProductLocalizedIconArray.md) | - |
 | [DeveloperProductLocalizedInfo](interfaces/DeveloperProductLocalizedInfo.md) | - |
 | [DeveloperProductLocalizedInfoArray](interfaces/DeveloperProductLocalizedInfoArray.md) | - |
-| [developerProductOptions](interfaces/developerProductOptions.md) | - |
-| [developerProductThumbnailOptions](interfaces/developerProductThumbnailOptions.md) | - |
+| [DeveloperProductOptions](interfaces/DeveloperProductOptions.md) | - |
+| [DeveloperProductThumbnailOptions](interfaces/DeveloperProductThumbnailOptions.md) | - |
 | [DeveloperProductWatch](interfaces/DeveloperProductWatch.md) | - |
 | [PollingConfig](interfaces/PollingConfig.md) | - |
 | [PollingOptions](interfaces/PollingOptions.md) | - |
 | [RateLimitData](interfaces/RateLimitData.md) | Type for displaying rate limits |
 | [RateLimitEvent](interfaces/RateLimitEvent.md) | Type for Rate Limit Events from the client |
 | [RequestOptions](interfaces/RequestOptions.md) | Type for sending a request from the client |
+| [RobloxClientTypings](interfaces/RobloxClientTypings.md) | - |
 
 ## Type Aliases
 

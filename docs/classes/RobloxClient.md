@@ -6,11 +6,15 @@
 
 # Class: RobloxClient
 
-Defined in: src/client/client.ts:212
+Defined in: src/client/client.ts:251
 
 ## Extends
 
 - `EventEmitter`
+
+## Implements
+
+- [`RobloxClientTypings`](../interfaces/RobloxClientTypings.md)
 
 ## Constructors
 
@@ -29,6 +33,10 @@ Defined in: src/client/client.ts:263
 #### Returns
 
 `RobloxClient`
+
+#### Overrides
+
+`EventEmitter.constructor`
 
 ## Properties
 
@@ -109,6 +117,10 @@ class MyClass extends EventEmitter {
 
 v13.4.0, v12.16.0
 
+#### Inherited from
+
+`EventEmitter.[captureRejectionSymbol]`
+
 ***
 
 ### addListener()
@@ -140,6 +152,10 @@ Alias for `emitter.on(eventName, listener)`.
 
 v0.1.26
 
+#### Inherited from
+
+`EventEmitter.addListener`
+
 ***
 
 ### destroy()
@@ -156,45 +172,77 @@ Defined in: src/client/client.ts:477
 
 ### emit()
 
-#### Call Signature
+> **emit**\<`E`\>(`eventName`, ...`args`): `boolean`
 
-> **emit**\<`K`\>(`event`, ...`args`): `boolean`
+Defined in: node\_modules/@types/node/events.d.ts:165
 
-Defined in: src/client/client.ts:229
+Synchronously calls each of the listeners registered for the event named
+`eventName`, in the order they were registered, passing the supplied arguments
+to each.
 
-##### Type Parameters
+Returns `true` if the event had listeners, `false` otherwise.
+
+```js
+import { EventEmitter } from 'node:events';
+const myEmitter = new EventEmitter();
+
+// First listener
+myEmitter.on('event', function firstListener() {
+  console.log('Helloooo! first listener');
+});
+// Second listener
+myEmitter.on('event', function secondListener(arg1, arg2) {
+  console.log(`event with parameters ${arg1}, ${arg2} in second listener`);
+});
+// Third listener
+myEmitter.on('event', function thirdListener(...args) {
+  const parameters = args.join(', ');
+  console.log(`event with parameters ${parameters} in third listener`);
+});
+
+console.log(myEmitter.listeners('event'));
+
+myEmitter.emit('event', 1, 2, 3, 4, 5);
+
+// Prints:
+// [
+//   [Function: firstListener],
+//   [Function: secondListener],
+//   [Function: thirdListener]
+// ]
+// Helloooo! first listener
+// event with parameters 1, 2 in second listener
+// event with parameters 1, 2, 3, 4, 5 in third listener
+```
+
+#### Type Parameters
 
 | Type Parameter |
 | ------ |
-| `K` *extends* keyof [`ClientEvents`](../interfaces/ClientEvents.md) |
+| `E` *extends* `string` \| `symbol` |
 
-##### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `event` | [`RobloxEvents`](../enumerations/RobloxEvents.md) |
-| ...`args` | [`ClientEvents`](../interfaces/ClientEvents.md)\[`K`\] |
-
-##### Returns
-
-`boolean`
-
-#### Call Signature
-
-> **emit**(`event`, ...`args`): `boolean`
-
-Defined in: src/client/client.ts:233
-
-##### Parameters
+#### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `event` | `string` |
+| `eventName` | `string` \| `symbol` |
 | ...`args` | `any`[] |
 
-##### Returns
+#### Returns
 
 `boolean`
+
+#### Since
+
+v0.1.26
+
+#### Implementation of
+
+[`RobloxClientTypings`](../interfaces/RobloxClientTypings.md).[`emit`](../interfaces/RobloxClientTypings.md#emit)
+
+#### Inherited from
+
+`EventEmitter.emit`
 
 ***
 
@@ -229,6 +277,10 @@ console.log(myEE.eventNames());
 
 v6.0.0
 
+#### Inherited from
+
+`EventEmitter.eventNames`
+
 ***
 
 ### getMaxListeners()
@@ -248,6 +300,10 @@ set by `emitter.setMaxListeners(n)` or defaults to
 #### Since
 
 v1.0.0
+
+#### Inherited from
+
+`EventEmitter.getMaxListeners`
 
 ***
 
@@ -281,6 +337,10 @@ in the list of the listeners of the event.
 #### Since
 
 v3.2.0
+
+#### Inherited from
+
+`EventEmitter.listenerCount`
 
 ***
 
@@ -320,137 +380,177 @@ console.log(util.inspect(server.listeners('connection')));
 
 v0.1.26
 
+#### Inherited from
+
+`EventEmitter.listeners`
+
 ***
 
 ### off()
 
-#### Call Signature
+> **off**\<`E`\>(`eventName`, `listener`): `this`
 
-> **off**\<`K`\>(`event`, `listener`): `this`
+Defined in: node\_modules/@types/node/events.d.ts:219
 
-Defined in: src/client/client.ts:237
+Alias for `emitter.removeListener()`.
 
-##### Type Parameters
+#### Type Parameters
 
 | Type Parameter |
 | ------ |
-| `K` *extends* keyof [`ClientEvents`](../interfaces/ClientEvents.md) |
+| `E` *extends* `string` \| `symbol` |
 
-##### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `event` | [`RobloxEvents`](../enumerations/RobloxEvents.md) |
-| `listener` | (...`args`) => `void` |
-
-##### Returns
-
-`this`
-
-#### Call Signature
-
-> **off**(`event`, `listener`): `this`
-
-Defined in: src/client/client.ts:241
-
-##### Parameters
+#### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `event` | `string` |
+| `eventName` | `string` \| `symbol` |
 | `listener` | (...`args`) => `void` |
 
-##### Returns
+#### Returns
 
 `this`
+
+#### Since
+
+v10.0.0
+
+#### Implementation of
+
+[`RobloxClientTypings`](../interfaces/RobloxClientTypings.md).[`off`](../interfaces/RobloxClientTypings.md#off)
+
+#### Inherited from
+
+`EventEmitter.off`
 
 ***
 
 ### on()
 
-#### Call Signature
+> **on**\<`E`\>(`eventName`, `listener`): `this`
 
-> **on**\<`K`\>(`event`, `listener`): `this`
+Defined in: node\_modules/@types/node/events.d.ts:253
 
-Defined in: src/client/client.ts:213
+Adds the `listener` function to the end of the listeners array for the
+event named `eventName`. No checks are made to see if the `listener` has
+already been added. Multiple calls passing the same combination of `eventName`
+and `listener` will result in the `listener` being added, and called, multiple
+times.
 
-##### Type Parameters
+```js
+server.on('connection', (stream) => {
+  console.log('someone connected!');
+});
+```
+
+Returns a reference to the `EventEmitter`, so that calls can be chained.
+
+By default, event listeners are invoked in the order they are added. The
+`emitter.prependListener()` method can be used as an alternative to add the
+event listener to the beginning of the listeners array.
+
+```js
+import { EventEmitter } from 'node:events';
+const myEE = new EventEmitter();
+myEE.on('foo', () => console.log('a'));
+myEE.prependListener('foo', () => console.log('b'));
+myEE.emit('foo');
+// Prints:
+//   b
+//   a
+```
+
+#### Type Parameters
 
 | Type Parameter |
 | ------ |
-| `K` *extends* keyof [`ClientEvents`](../interfaces/ClientEvents.md) |
+| `E` *extends* `string` \| `symbol` |
 
-##### Parameters
+#### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `event` | [`RobloxEvents`](../enumerations/RobloxEvents.md) |
-| `listener` | (...`args`) => `void` |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `eventName` | `string` \| `symbol` | The name of the event. |
+| `listener` | (...`args`) => `void` | The callback function |
 
-##### Returns
-
-`this`
-
-#### Call Signature
-
-> **on**(`event`, `listener`): `this`
-
-Defined in: src/client/client.ts:217
-
-##### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `event` | `string` |
-| `listener` | (...`args`) => `void` |
-
-##### Returns
+#### Returns
 
 `this`
+
+#### Since
+
+v0.1.101
+
+#### Implementation of
+
+[`RobloxClientTypings`](../interfaces/RobloxClientTypings.md).[`on`](../interfaces/RobloxClientTypings.md#on)
+
+#### Inherited from
+
+`EventEmitter.on`
 
 ***
 
 ### once()
 
-#### Call Signature
+> **once**\<`E`\>(`eventName`, `listener`): `this`
 
-> **once**\<`K`\>(`event`, `listener`): `this`
+Defined in: node\_modules/@types/node/events.d.ts:284
 
-Defined in: src/client/client.ts:221
+Adds a **one-time** `listener` function for the event named `eventName`. The
+next time `eventName` is triggered, this listener is removed and then invoked.
 
-##### Type Parameters
+```js
+server.once('connection', (stream) => {
+  console.log('Ah, we have our first user!');
+});
+```
+
+Returns a reference to the `EventEmitter`, so that calls can be chained.
+
+By default, event listeners are invoked in the order they are added. The
+`emitter.prependOnceListener()` method can be used as an alternative to add the
+event listener to the beginning of the listeners array.
+
+```js
+import { EventEmitter } from 'node:events';
+const myEE = new EventEmitter();
+myEE.once('foo', () => console.log('a'));
+myEE.prependOnceListener('foo', () => console.log('b'));
+myEE.emit('foo');
+// Prints:
+//   b
+//   a
+```
+
+#### Type Parameters
 
 | Type Parameter |
 | ------ |
-| `K` *extends* keyof [`ClientEvents`](../interfaces/ClientEvents.md) |
+| `E` *extends* `string` \| `symbol` |
 
-##### Parameters
+#### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `event` | [`RobloxEvents`](../enumerations/RobloxEvents.md) |
-| `listener` | (...`args`) => `void` |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `eventName` | `string` \| `symbol` | The name of the event. |
+| `listener` | (...`args`) => `void` | The callback function |
 
-##### Returns
-
-`this`
-
-#### Call Signature
-
-> **once**(`event`, `listener`): `this`
-
-Defined in: src/client/client.ts:225
-
-##### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `event` | `string` |
-| `listener` | (...`args`) => `void` |
-
-##### Returns
+#### Returns
 
 `this`
+
+#### Since
+
+v0.3.0
+
+#### Implementation of
+
+[`RobloxClientTypings`](../interfaces/RobloxClientTypings.md).[`once`](../interfaces/RobloxClientTypings.md#once)
+
+#### Inherited from
+
+`EventEmitter.once`
 
 ***
 
@@ -495,6 +595,10 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 v6.0.0
 
+#### Inherited from
+
+`EventEmitter.prependListener`
+
 ***
 
 ### prependOnceListener()
@@ -535,6 +639,10 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 #### Since
 
 v6.0.0
+
+#### Inherited from
+
+`EventEmitter.prependOnceListener`
 
 ***
 
@@ -592,47 +700,53 @@ emitter.emit('log');
 
 v9.4.0
 
+#### Inherited from
+
+`EventEmitter.rawListeners`
+
 ***
 
 ### removeAllListeners()
 
-#### Call Signature
+> **removeAllListeners**\<`E`\>(`eventName?`): `this`
 
-> **removeAllListeners**\<`K`\>(`event?`): `this`
+Defined in: node\_modules/@types/node/events.d.ts:362
 
-Defined in: src/client/client.ts:245
+Removes all listeners, or those of the specified `eventName`.
 
-##### Type Parameters
+It is bad practice to remove listeners added elsewhere in the code,
+particularly when the `EventEmitter` instance was created by some other
+component or module (e.g. sockets or file streams).
+
+Returns a reference to the `EventEmitter`, so that calls can be chained.
+
+#### Type Parameters
 
 | Type Parameter |
 | ------ |
-| `K` *extends* keyof [`ClientEvents`](../interfaces/ClientEvents.md) |
+| `E` *extends* `string` \| `symbol` |
 
-##### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `event?` | `K` |
-
-##### Returns
-
-`this`
-
-#### Call Signature
-
-> **removeAllListeners**(`event`): `this`
-
-Defined in: src/client/client.ts:246
-
-##### Parameters
+#### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `event` | `string` |
+| `eventName?` | `string` \| `symbol` |
 
-##### Returns
+#### Returns
 
 `this`
+
+#### Since
+
+v0.1.26
+
+#### Implementation of
+
+[`RobloxClientTypings`](../interfaces/RobloxClientTypings.md).[`removeAllListeners`](../interfaces/RobloxClientTypings.md#removealllisteners)
+
+#### Inherited from
+
+`EventEmitter.removeAllListeners`
 
 ***
 
@@ -747,6 +861,10 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 
 v0.1.26
 
+#### Inherited from
+
+`EventEmitter.removeListener`
+
 ***
 
 ### request()
@@ -800,3 +918,7 @@ Returns a reference to the `EventEmitter`, so that calls can be chained.
 #### Since
 
 v0.3.5
+
+#### Inherited from
+
+`EventEmitter.setMaxListeners`

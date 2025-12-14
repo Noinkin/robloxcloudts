@@ -52,7 +52,7 @@ export interface DeveloperProductLocalizedIconArray {
     }[];
 }
 
-export interface developerProductOptions {
+export interface DeveloperProductOptions {
     name?: string;
     description?: string;
     isForSale?: boolean;
@@ -61,12 +61,12 @@ export interface developerProductOptions {
     isRegionalPricingEnabled?: boolean;
 }
 
-export interface developerProductImageSizeOptions {
+export interface DeveloperProductImageSizeOptions {
     width?: number;
     height?: number;
 }
 
-export interface developerProductThumbnailOptions {
+export interface DeveloperProductThumbnailOptions {
     size?: DeveloperProductThumbnailSizes;
     format?: DeveloperProductThumbnailFormats;
     isCircular?: boolean;
@@ -133,7 +133,7 @@ export class DeveloperProduct {
     }
 
     async edit(
-        options: developerProductOptions & { storePageEnabled?: boolean },
+        options: DeveloperProductOptions & { storePageEnabled?: boolean },
     ): Promise<this> {
         const data = await this.manager.update(
             this.universeId,
@@ -204,7 +204,7 @@ export class DeveloperProduct {
     }
 
     async getThumbnail(
-        options: developerProductThumbnailOptions,
+        options: DeveloperProductThumbnailOptions,
     ): Promise<DeveloperProductLocalizedIconArray> {
         return this.manager.getThumbnailIcons([this.productId], options);
     }
@@ -224,7 +224,7 @@ export class DeveloperProduct {
         return this.manager.deleteLocalizedIcon(this.productId, languageCode);
     }
 
-    async getIcon(options: developerProductImageSizeOptions): Promise<any> {
+    async getIcon(options: DeveloperProductImageSizeOptions): Promise<any> {
         return this.manager.getIcons(this.productId, options);
     }
 
@@ -367,7 +367,7 @@ export class DeveloperProductsManager extends BaseManager {
 
     async create(
         universeId: number,
-        options: developerProductOptions & { name: string },
+        options: DeveloperProductOptions & { name: string },
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Post,
@@ -380,7 +380,7 @@ export class DeveloperProductsManager extends BaseManager {
     async update(
         universeId: number,
         productId: number,
-        options: developerProductOptions & { storePageEnabled?: boolean },
+        options: DeveloperProductOptions & { storePageEnabled?: boolean },
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Patch,
@@ -417,7 +417,7 @@ export class DeveloperProductsManager extends BaseManager {
 
     async getIcons(
         productId: number,
-        options: developerProductImageSizeOptions,
+        options: DeveloperProductImageSizeOptions,
     ): Promise<any> {
         const params: Record<string, number> = {};
         if (options.width) params["width"] = options.width;
@@ -517,7 +517,7 @@ export class DeveloperProductsManager extends BaseManager {
 
     async getThumbnailIcons(
         productIds: number[],
-        options: developerProductThumbnailOptions,
+        options: DeveloperProductThumbnailOptions,
     ): Promise<DeveloperProductLocalizedIconArray> {
         const params: Record<string, string | boolean | number[]> = {};
         params["developerProductIds"] = productIds;
