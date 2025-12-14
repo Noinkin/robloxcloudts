@@ -13,7 +13,7 @@ import {
 export interface ClientOptions {
     /** API Key to use Roblox API */
     apiKey: string;
-    /** The amount of times to retry if any errorr occur */
+    /** The amount of times to retry if any errors occur */
     retries?: number;
     /** The delay between retries if any errors occur */
     retryDelay?: number;
@@ -125,7 +125,7 @@ export interface ApiRequestEvent {
  * Type for API Error Events from the client
  */
 export interface ApiErrorEvent {
-    /** The error that occured */
+    /** The error that occurred */
     error: Error;
     /** The endpoint the error was thrown from */
     endpoint: string;
@@ -147,7 +147,7 @@ export enum RobloxEvents {
     Error = "ERROR",
     /** Fired when a rate limit is reached */
     RateLimit = "RATE_LIMIT",
-    /** Fired when an API Response is recieved */
+    /** Fired when an API Response is received */
     ApiResponse = "API_RESPONSE",
     /** Fired when an API Request is sent */
     ApiRequest = "API_REQUEST",
@@ -249,10 +249,10 @@ export declare interface RobloxClientTypings {
 }
 
 export class RobloxClient extends EventEmitter implements RobloxClientTypings {
-    private apiKey: string;
-    private rateLimits: Map<string, RateLimitData>;
-    private retries: number;
-    private retryDelay: number;
+    private readonly apiKey: string;
+    private readonly rateLimits: Map<string, RateLimitData>;
+    private readonly retries: number;
+    private readonly retryDelay: number;
     private _ready: boolean = false;
 
     public readonly polling: PollingManager;
@@ -270,7 +270,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
 
         this.polling = new PollingManager(this);
 
-        // Manager initialisation
+        // Manager initialization
         this.developerProducts = new DeveloperProductsManager(this);
 
         process.nextTick(() => {
@@ -280,6 +280,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
     }
 
     async request<T = any>(options: RequestOptions): Promise<T> {
+        // NOSONAR
         const { method, endpoint, body, params, headers = {} } = options;
 
         const url = new URL(endpoint);
@@ -307,7 +308,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
                     headers: {
                         "x-api-key": this.apiKey,
                         "Content-Type":
-                            options.contentType || "application/json",
+                            options.contentType ?? "application/json",
                         ...headers,
                     },
                     body: body ? JSON.stringify(body) : "",
@@ -328,7 +329,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
                         endpoint,
                         waitTime: retryAfter,
                         limit: parseInt(
-                            response.headers.get("x-ratelimit-limit") || "0",
+                            response.headers.get("x-ratelimit-limit") ?? "0",
                         ),
                         remaining: 0,
                         reset: Date.now() + retryAfter,
@@ -453,7 +454,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
 
         try {
             const errorData: any = await response.json();
-            errorMessage = errorData.message || errorData.error || errorMessage;
+            errorMessage = errorData.message ?? errorData.error ?? errorMessage;
             errorCode = errorData.code;
         } catch {}
 

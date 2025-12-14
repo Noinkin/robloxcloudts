@@ -15,7 +15,7 @@ Enumeration for general events
 | Enumeration Member | Value | Description | Defined in |
 | ------ | ------ | ------ | ------ |
 | <a id="apirequest"></a> `ApiRequest` | `"API_REQUEST"` | Fired when an API Request is sent | src/client/client.ts:153 |
-| <a id="apiresponse"></a> `ApiResponse` | `"API_RESPONSE"` | Fired when an API Response is recieved | src/client/client.ts:151 |
+| <a id="apiresponse"></a> `ApiResponse` | `"API_RESPONSE"` | Fired when an API Response is received | src/client/client.ts:151 |
 | <a id="debug"></a> `Debug` | `"DEBUG"` | Fired for debugging on smaller actions | src/client/client.ts:145 |
 | <a id="error"></a> `Error` | `"ERROR"` | Fired when an error occurs | src/client/client.ts:147 |
 | <a id="ratelimit"></a> `RateLimit` | `"RATE_LIMIT"` | Fired when a rate limit is reached | src/client/client.ts:149 |

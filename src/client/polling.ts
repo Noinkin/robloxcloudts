@@ -34,8 +34,8 @@ export function buildResourceEvent(
 }
 
 export class ResourcePoller<T = any> {
-    private config: PollingConfig<T>;
-    private client: RobloxClient;
+    private readonly config: PollingConfig<T>;
+    private readonly client: RobloxClient;
     private isPolling: boolean = false;
 
     constructor(
@@ -60,7 +60,7 @@ export class ResourcePoller<T = any> {
         }
 
         this.isPolling = true;
-        const interval = this.config.options.interval || 60000;
+        const interval = this.config.options.interval ?? 60000;
 
         if (this.config.options.immediate !== false) {
             this.poll();
@@ -136,7 +136,7 @@ export class ResourcePoller<T = any> {
 
         if (typeof compareBy === "function") return compareBy;
 
-        const key = compareBy || "id";
+        const key = compareBy ?? "id";
         return (item: any) => String(item[key]);
     }
 
@@ -163,8 +163,8 @@ export class ResourcePoller<T = any> {
 }
 
 export class PollingManager {
-    private client: RobloxClient;
-    private pollers: Map<string, ResourcePoller> = new Map();
+    private readonly client: RobloxClient;
+    private readonly pollers: Map<string, ResourcePoller> = new Map();
 
     constructor(client: RobloxClient) {
         this.client = client;
@@ -195,7 +195,7 @@ export class PollingManager {
         });
 
         this.pollers.set(key, poller);
-        poller.start;
+        poller.start();
 
         return poller;
     }

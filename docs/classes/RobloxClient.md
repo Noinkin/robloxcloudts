@@ -62,7 +62,7 @@ Defined in: src/client/client.ts:258
 
 > **get** **ready**(): `boolean`
 
-Defined in: src/client/client.ts:473
+Defined in: src/client/client.ts:474
 
 ##### Returns
 
@@ -162,7 +162,7 @@ v0.1.26
 
 > **destroy**(): `void`
 
-Defined in: src/client/client.ts:477
+Defined in: src/client/client.ts:478
 
 #### Returns
 
