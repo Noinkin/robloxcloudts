@@ -11,6 +11,8 @@
 | [ContentTypes](enumerations/ContentTypes.md) | Enumeration for Content Types |
 | [DeveloperProductThumbnailFormats](enumerations/DeveloperProductThumbnailFormats.md) | - |
 | [DeveloperProductThumbnailSizes](enumerations/DeveloperProductThumbnailSizes.md) | - |
+| [GamepassThumbnailFormats](enumerations/GamepassThumbnailFormats.md) | - |
+| [GamepassThumbnailSizes](enumerations/GamepassThumbnailSizes.md) | - |
 | [RequestTypes](enumerations/RequestTypes.md) | Enumeration for Request Types |
 | [ResourceAction](enumerations/ResourceAction.md) | Enumeration for roblox event actions |
 | [ResourceEvents](enumerations/ResourceEvents.md) | Enumeration for roblox events |
@@ -23,6 +25,8 @@
 | [BaseManager](classes/BaseManager.md) | - |
 | [DeveloperProduct](classes/DeveloperProduct.md) | - |
 | [DeveloperProductsManager](classes/DeveloperProductsManager.md) | - |
+| [Gamepass](classes/Gamepass.md) | - |
+| [GamepassesManager](classes/GamepassesManager.md) | - |
 | [PollingManager](classes/PollingManager.md) | - |
 | [RateLimitError](classes/RateLimitError.md) | - |
 | [ResourcePoller](classes/ResourcePoller.md) | - |
@@ -45,6 +49,13 @@
 | [DeveloperProductLocalizedInfoArray](interfaces/DeveloperProductLocalizedInfoArray.md) | - |
 | [DeveloperProductOptions](interfaces/DeveloperProductOptions.md) | - |
 | [DeveloperProductWatch](interfaces/DeveloperProductWatch.md) | - |
+| [GamepassData](interfaces/GamepassData.md) | - |
+| [GamepassImageSizeOptions](interfaces/GamepassImageSizeOptions.md) | - |
+| [GamepassLocalizedIconArray](interfaces/GamepassLocalizedIconArray.md) | - |
+| [GamepassLocalizedInfo](interfaces/GamepassLocalizedInfo.md) | - |
+| [GamepassLocalizedInfoArray](interfaces/GamepassLocalizedInfoArray.md) | - |
+| [GamepassOptions](interfaces/GamepassOptions.md) | - |
+| [GamepassWatch](interfaces/GamepassWatch.md) | - |
 | [PollingConfig](interfaces/PollingConfig.md) | - |
 | [PollingOptions](interfaces/PollingOptions.md) | - |
 | [RateLimitData](interfaces/RateLimitData.md) | Type for displaying rate limits |

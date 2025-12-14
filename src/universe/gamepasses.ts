@@ -12,24 +12,22 @@ import {
 } from "../client/polling.js";
 import { BaseManager } from "../events/base.js";
 
-export interface DeveloperProductData {
-    productId: number;
+export interface GamepassData {
+    gamePassId: number;
     name: string;
     description: string;
     iconImageAssetId: number;
     universeId: number;
     isForSale: boolean;
-    storePageEnabled: boolean;
     priceInformation: {
         defaultPriceInRobux: number;
         enabledFeatures: string[];
     };
-    isImmutable: boolean;
     createdTimestamp: string;
     updatedTimestamp: string;
 }
 
-export interface DeveloperProductLocalizedInfoArray {
+export interface GamepassLocalizedInfoArray {
     data: {
         name: string;
         description: string;
@@ -38,12 +36,12 @@ export interface DeveloperProductLocalizedInfoArray {
     }[];
 }
 
-export interface DeveloperProductLocalizedInfo {
+export interface GamepassLocalizedInfo {
     name: string;
     description: string;
 }
 
-export interface DeveloperProductLocalizedIconArray {
+export interface GamepassLocalizedIconArray {
     data: {
         targetId: number;
         state: string;
@@ -52,7 +50,7 @@ export interface DeveloperProductLocalizedIconArray {
     }[];
 }
 
-export interface DeveloperProductOptions {
+export interface GamepassOptions {
     name?: string;
     description?: string;
     isForSale?: boolean;
@@ -61,30 +59,30 @@ export interface DeveloperProductOptions {
     isRegionalPricingEnabled?: boolean;
 }
 
-export interface DeveloperProductImageSizeOptions {
+export interface GamepassImageSizeOptions {
     width?: number;
     height?: number;
 }
 
-export enum DeveloperProductThumbnailSizes {
+export enum GamepassThumbnailSizes {
     small = "150x150",
     large = "420x420",
 }
 
-export enum DeveloperProductThumbnailFormats {
+export enum GamepassThumbnailFormats {
     Png = "Png",
     Webp = "Webp",
 }
 
-export interface DeveloperProductWatch {
-    onCreate: (callback: (...productData: any[]) => void) => any;
-    onUpdate: (callback: (...productData: any[]) => void) => any;
-    onDelete: (callback: (...productData: any[]) => void) => any;
+export interface GamepassWatch {
+    onCreate: (callback: (...gamepassData: any[]) => void) => any;
+    onUpdate: (callback: (...gamepassData: any[]) => void) => any;
+    onDelete: (callback: (...gamepassData: any[]) => void) => any;
     stop: () => void;
 }
 
-export class DeveloperProduct {
-    public readonly productId: number;
+export class Gamepass {
+    public readonly gamePassId: number;
     public name!: string;
     public description!: string;
     public iconImageAssetId!: number;
@@ -95,43 +93,40 @@ export class DeveloperProduct {
         defaultPriceInRobux: number;
         enabledFeatures: string[];
     };
-    public readonly isImmutable: boolean;
     public readonly createdTimestamp: Date;
     public updatedTimestamp!: Date;
 
-    private readonly manager: DeveloperProductsManager;
+    private readonly manager: GamepassesManager;
 
-    constructor(manager: DeveloperProductsManager, data: DeveloperProductData) {
-        this.productId = data.productId;
+    constructor(manager: GamepassesManager, data: GamepassData) {
+        this.gamePassId = data.gamePassId;
         this.universeId = data.universeId;
-        this.isImmutable = data.isImmutable;
         this.createdTimestamp = new Date(data.createdTimestamp);
         this.manager = manager;
         this._patch(data);
     }
 
-    private _patch(data: DeveloperProductData | DeveloperProduct): void {
+    private _patch(data: GamepassData | Gamepass): void {
         this.name = data.name;
         this.description = data.description;
         this.iconImageAssetId = data.iconImageAssetId;
         this.isForSale = data.isForSale;
-        this.storePageEnabled = data.storePageEnabled;
         this.priceInformation = data.priceInformation;
         this.updatedTimestamp = new Date(data.updatedTimestamp);
     }
 
     async fetch(): Promise<this> {
-        const data = await this.manager.get(this.universeId, this.productId);
+        const data = await this.manager.get(this.universeId, this.gamePassId);
         this._patch(data);
         return this;
     }
 
     async edit(
-        options: DeveloperProductOptions & { storePageEnabled?: boolean },
+        options: GamepassOptions & { storePageEnabled?: boolean },
     ): Promise<this> {
         const data = await this.manager.update(
             this.universeId,
-            this.productId,
+            this.gamePassId,
             options,
         );
         this._patch(data);
@@ -158,16 +153,16 @@ export class DeveloperProduct {
         return this.edit({ storePageEnabled: enabled });
     }
 
-    async getLocalizedInfo(): Promise<DeveloperProductLocalizedInfoArray> {
-        return this.manager.getLocalizedInfo(this.productId);
+    async getLocalizedInfo(): Promise<GamepassLocalizedInfoArray> {
+        return this.manager.getLocalizedInfo(this.gamePassId);
     }
 
     async setLocalizedName(
         languageCode: string,
         name: string,
-    ): Promise<DeveloperProductLocalizedInfo> {
+    ): Promise<GamepassLocalizedInfo> {
         return this.manager.updateLocalizedName(
-            this.productId,
+            this.gamePassId,
             languageCode,
             name,
         );
@@ -176,9 +171,9 @@ export class DeveloperProduct {
     async setLocalizedDescription(
         languageCode: string,
         description: string,
-    ): Promise<DeveloperProductLocalizedInfo> {
+    ): Promise<GamepassLocalizedInfo> {
         return this.manager.updateLocalizedDescription(
-            this.productId,
+            this.gamePassId,
             languageCode,
             description,
         );
@@ -190,7 +185,7 @@ export class DeveloperProduct {
         description: string,
     ) {
         return this.manager.updateLocalizedInfo(
-            this.productId,
+            this.gamePassId,
             languageCode,
             name,
             description,
@@ -202,29 +197,29 @@ export class DeveloperProduct {
         imageFile: Buffer,
     ): Promise<any> {
         return this.manager.updateLocalizedIcon(
-            this.productId,
+            this.gamePassId,
             languageCode,
             imageFile,
         );
     }
 
     async deleteLocalizedIcon(languageCode: string): Promise<any> {
-        return this.manager.deleteLocalizedIcon(this.productId, languageCode);
+        return this.manager.deleteLocalizedIcon(this.gamePassId, languageCode);
     }
 
-    async getIcon(options: DeveloperProductImageSizeOptions): Promise<any> {
-        return this.manager.getIcons(this.productId, options);
+    async getIcon(options: GamepassImageSizeOptions): Promise<any> {
+        return this.manager.getIcons(this.gamePassId, options);
     }
 
-    equals(other: DeveloperProduct): boolean {
+    equals(other: Gamepass): boolean {
         return (
-            this.productId === other.productId &&
+            this.gamePassId === other.gamePassId &&
             this.updatedTimestamp.getTime() === other.updatedTimestamp.getTime()
         );
     }
 
     get url(): string {
-        return `https://www.roblox.com/game-pass/${this.productId}`;
+        return `https://www.roblox.com/game-pass/${this.gamePassId}`;
     }
 
     get price(): number {
@@ -239,40 +234,38 @@ export class DeveloperProduct {
         return this.updatedTimestamp.getTime();
     }
 
-    toJSON(): DeveloperProductData {
+    toJSON(): GamepassData {
         return {
-            productId: this.productId,
+            gamePassId: this.gamePassId,
             name: this.name,
             description: this.description,
             iconImageAssetId: this.iconImageAssetId,
             universeId: this.universeId,
             isForSale: this.isForSale,
-            storePageEnabled: this.storePageEnabled,
             priceInformation: this.priceInformation,
-            isImmutable: this.isImmutable,
             createdTimestamp: this.createdTimestamp.toISOString(),
             updatedTimestamp: this.updatedTimestamp.toISOString(),
         };
     }
 
     toString(): string {
-        return `DeveloperProduct[${this.productId}] ${this.name}`;
+        return `DeveloperProduct[${this.gamePassId}] ${this.name}`;
     }
 }
 
-export class DeveloperProductsManager extends BaseManager {
-    watch(universeId: number, options?: PollingOptions): DeveloperProductWatch {
+export class GamepassesManager extends BaseManager {
+    watch(universeId: number, options?: PollingOptions): GamepassWatch {
         const universeStr = universeId.toString();
 
         const watcherSetup = () => {
             this.client.polling.startPolling(
-                ResourceEvents.DeveloperProduct,
+                ResourceEvents.Gamepass,
                 universeStr,
                 () => this.getAll(universeId),
                 {
                     interval: options?.interval ?? 10000,
                     immediate: options?.immediate ?? true,
-                    compareBy: "productId",
+                    compareBy: "gamePassId",
                     ...options,
                 },
             );
@@ -287,7 +280,7 @@ export class DeveloperProductsManager extends BaseManager {
         return {
             onCreate: (callback: (...productData: any) => void) => {
                 const event = buildResourceEvent(
-                    ResourceEvents.DeveloperProduct,
+                    ResourceEvents.Gamepass,
                     ResourceAction.Create,
                     universeStr,
                 );
@@ -296,7 +289,7 @@ export class DeveloperProductsManager extends BaseManager {
             },
             onUpdate: (callback: (...productData: any) => void) => {
                 const event = buildResourceEvent(
-                    ResourceEvents.DeveloperProduct,
+                    ResourceEvents.Gamepass,
                     ResourceAction.Update,
                     universeStr,
                 );
@@ -305,7 +298,7 @@ export class DeveloperProductsManager extends BaseManager {
             },
             onDelete: (callback: (...productData: any) => void) => {
                 const event = buildResourceEvent(
-                    ResourceEvents.DeveloperProduct,
+                    ResourceEvents.Gamepass,
                     ResourceAction.Delete,
                     universeStr,
                 );
@@ -324,7 +317,7 @@ export class DeveloperProductsManager extends BaseManager {
             {
                 interval: options?.interval ?? 30000,
                 immediate: options?.immediate ?? true,
-                compareBy: "productId",
+                compareBy: "gamePassId",
                 ...options,
             },
         );
@@ -338,63 +331,60 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async _convert(data: any) {
-        const product = new DeveloperProduct(this, data);
-        return product;
+        const gamepass = new Gamepass(this, data);
+        return gamepass;
     }
 
     /**
-     * Gets information about a developer product by its universe ID and product ID.
+     * Gets information about a developer gamepass by its universe ID and gamepass ID.
      * @param universeId {number} The universe ID
-     * @param productId {number} The product ID
+     * @param gamePassId {number} The gamepass ID
      * @returns DeveloperProduct
      * @beta This API Endpoint is currently in beta and may change at any time
      */
-    async get(
-        universeId: number,
-        productId: number,
-    ): Promise<DeveloperProduct> {
+    async get(universeId: number, gamePassId: number): Promise<Gamepass> {
         const data = await this.request({
             method: RequestTypes.Get,
-            endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products/${productId}/creator`,
+            endpoint: `https://apis.roblox.com/game-passes/v1/universes/${universeId}/game-passes/${gamePassId}/creator`,
         });
         return this._convert(data);
     }
 
     /**
-     * Creates a new developer product in the specified universe.
+     * Creates a new developer gamepass in the specified universe.
      * @param universeId {number} The universe ID
-     * @param options {DeveloperProductOptions & { name: string }} The options for the developer product
+     * @param options {GamepassOptions & { name: string }} The options for the developer gamepass
      * @returns DeveloperProduct
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async create(
         universeId: number,
-        options: DeveloperProductOptions & { name: string },
+        options: GamepassOptions & { name: string },
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Post,
-            endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products`,
+            endpoint: `https://apis.roblox.com/game-passes/v1/universes/${universeId}/game-passes`,
             body: options,
         });
         return this._convert(data);
     }
 
     /**
-     * Updates an existing developer product.
+     * Updates an existing developer gamepass.
      * @param universeId {number} The universe ID
-     * @param productId {number} The product ID
-     * @param options {DeveloperProductOptions & { storePageEnabled?: boolean }} The options for the developer product
+     * @param gamePassId {number} The gamepass ID
+     * @param options {GamepassOptions & { storePageEnabled?: boolean }} The options for the developer gamepass
      * @returns DeveloperProduct
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async update(
         universeId: number,
-        productId: number,
-        options: DeveloperProductOptions & { storePageEnabled?: boolean },
+        gamePassId: number,
+        options: GamepassOptions & { storePageEnabled?: boolean },
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Patch,
-            endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products/${productId}`,
+            endpoint: `https://apis.roblox.com/game-passes/v1/universes/${universeId}/game-passes/${gamePassId}`,
             body: options,
         });
         return this._convert(data);
@@ -406,8 +396,8 @@ export class DeveloperProductsManager extends BaseManager {
      * @returns DeveloperProduct[]
      * @beta This API Endpoint is currently in beta and may change at any time
      */
-    async getAll(universeId: number): Promise<DeveloperProduct[]> {
-        const allProducts: DeveloperProductData[] | DeveloperProduct[] = [];
+    async getAll(universeId: number): Promise<Gamepass[]> {
+        const allProducts: GamepassData[] | Gamepass[] = [];
 
         let pageToken: string | undefined = undefined;
 
@@ -416,15 +406,15 @@ export class DeveloperProductsManager extends BaseManager {
             if (pageToken) params["pageToken"] = pageToken;
 
             const response = await this.request<{
-                developerProducts: any[];
+                gamePasses: any[];
                 nextPageToken?: string;
             }>({
                 method: RequestTypes.Get,
-                endpoint: `https://apis.roblox.com/developer-products/v2/universes/${universeId}/developer-products/creator`,
+                endpoint: `https://apis.roblox.com/game-passes/v1/universes/${universeId}/game-passes/creator`,
                 params,
             });
 
-            allProducts.push(...response.developerProducts);
+            allProducts.push(...response.gamePasses);
             pageToken = response.nextPageToken;
         } while (pageToken);
 
@@ -432,70 +422,70 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async getIcons(
-        productId: number,
-        options: DeveloperProductImageSizeOptions,
+        gamePassId: number,
+        options: GamepassImageSizeOptions,
     ): Promise<any> {
         const params: Record<string, number> = {};
         if (options.width) params["width"] = options.width;
         if (options.height) params["height"] = options.height;
         return this.request({
             method: RequestTypes.Get,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/icons`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/icons`,
             params,
         });
     }
 
     async deleteLocalizedIcon(
-        productId: number,
+        gamePassId: number,
         languageCode: string,
     ): Promise<any> {
         return this.request({
             method: RequestTypes.Delete,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/icons/language-codes/${languageCode}`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/icons/language-codes/${languageCode}`,
         });
     }
 
     async updateLocalizedIcon(
-        productId: number,
+        gamePassId: number,
         languageCode: string,
         imageFile: Buffer,
     ): Promise<any> {
         return this.request({
             method: RequestTypes.Post,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/icons/language-codes/${languageCode}`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/icons/language-codes/${languageCode}`,
             body: imageFile,
             contentType: ContentTypes.MultipartForm,
         });
     }
 
     async getLocalizedInfo(
-        productId: number,
-    ): Promise<DeveloperProductLocalizedInfoArray> {
+        gamePassId: number,
+    ): Promise<GamepassLocalizedInfoArray> {
         return this.request({
             method: RequestTypes.Get,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name-description`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/name-description`,
         });
     }
 
     async deleteLocalizedInfo(
-        productId: number,
+        gamePassId: number,
         languageCode: string,
     ): Promise<any> {
         return this.request({
             method: RequestTypes.Delete,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name-description/language-codes/${languageCode}`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/name-description/language-codes/${languageCode}`,
         });
     }
 
     async updateLocalizedInfo(
-        productId: number,
+        gamePassId: number,
         languageCode: string,
         name: string,
         description: string,
-    ): Promise<DeveloperProductLocalizedInfo> {
+    ): Promise<GamepassLocalizedInfo> {
         return this.request({
             method: RequestTypes.Patch,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name-description/language-codes/${languageCode}`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/name-description/language-codes/${languageCode}`,
             body: {
                 name,
                 description,
@@ -504,13 +494,13 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async updateLocalizedName(
-        productId: number,
+        gamePassId: number,
         languageCode: string,
         name: string,
-    ): Promise<DeveloperProductLocalizedInfo> {
+    ): Promise<GamepassLocalizedInfo> {
         return this.request({
             method: RequestTypes.Patch,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/name/language-codes/${languageCode}`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/name/language-codes/${languageCode}`,
             body: {
                 name,
             },
@@ -518,13 +508,13 @@ export class DeveloperProductsManager extends BaseManager {
     }
 
     async updateLocalizedDescription(
-        productId: number,
+        gamePassId: number,
         languageCode: string,
         description: string,
-    ): Promise<DeveloperProductLocalizedInfo> {
+    ): Promise<GamepassLocalizedInfo> {
         return this.request({
             method: RequestTypes.Patch,
-            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/developer-products/${productId}/description/language-codes/${languageCode}`,
+            endpoint: `https://apis.roblox.com/legacy-game-internationalization/v1/game-passes/${gamePassId}/description/language-codes/${languageCode}`,
             body: {
                 description,
             },

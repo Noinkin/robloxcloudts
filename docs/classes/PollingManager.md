@@ -104,7 +104,7 @@ Defined in: src/client/polling.ts:173
 
 | Parameter | Type |
 | ------ | ------ |
-| `resource` | [`DeveloperProduct`](../enumerations/ResourceEvents.md#developerproduct) |
+| `resource` | [`ResourceEvents`](../enumerations/ResourceEvents.md) |
 | `resourceId` | `string` |
 | `fetchFunction` | () => `Promise`\<`T`[]\> |
 | `options` | [`PollingOptions`](../interfaces/PollingOptions.md) |
@@ -137,7 +137,7 @@ Defined in: src/client/polling.ts:203
 
 | Parameter | Type |
 | ------ | ------ |
-| `resource` | [`DeveloperProduct`](../enumerations/ResourceEvents.md#developerproduct) |
+| `resource` | [`ResourceEvents`](../enumerations/ResourceEvents.md) |
 | `resourceId` | `string` |
 
 #### Returns

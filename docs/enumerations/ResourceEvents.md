@@ -15,3 +15,4 @@ Enumeration for roblox events
 | Enumeration Member | Value | Description | Defined in |
 | ------ | ------ | ------ | ------ |
 | <a id="developerproduct"></a> `DeveloperProduct` | `"DEVELOPER_PRODUCT"` | Fired when there is changes made to Developer Products | src/client/client.ts:163 |
+| <a id="gamepass"></a> `Gamepass` | `"GAMEPASS"` | - | src/client/client.ts:164 |

@@ -161,6 +161,7 @@ export enum RobloxEvents {
 export enum ResourceEvents {
     /** Fired when there is changes made to Developer Products */
     DeveloperProduct = "DEVELOPER_PRODUCT",
+    Gamepass = "GAMEPASS",
 }
 
 /**

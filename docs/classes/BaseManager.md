@@ -11,6 +11,7 @@ Defined in: src/events/base.ts:3
 ## Extended by
 
 - [`DeveloperProductsManager`](DeveloperProductsManager.md)
+- [`GamepassesManager`](GamepassesManager.md)
 
 ## Constructors
 

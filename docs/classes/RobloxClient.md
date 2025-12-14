@@ -6,7 +6,7 @@
 
 # Class: RobloxClient
 
-Defined in: src/client/client.ts:251
+Defined in: src/client/client.ts:252
 
 ## Extends
 
@@ -22,7 +22,7 @@ Defined in: src/client/client.ts:251
 
 > **new RobloxClient**(`options`): `RobloxClient`
 
-Defined in: src/client/client.ts:263
+Defined in: src/client/client.ts:264
 
 #### Parameters
 
@@ -44,7 +44,7 @@ Defined in: src/client/client.ts:263
 
 > `readonly` **developerProducts**: [`DeveloperProductsManager`](DeveloperProductsManager.md)
 
-Defined in: src/client/client.ts:261
+Defined in: src/client/client.ts:262
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: src/client/client.ts:261
 
 > `readonly` **polling**: [`PollingManager`](PollingManager.md)
 
-Defined in: src/client/client.ts:258
+Defined in: src/client/client.ts:259
 
 ## Accessors
 
@@ -62,7 +62,7 @@ Defined in: src/client/client.ts:258
 
 > **get** **ready**(): `boolean`
 
-Defined in: src/client/client.ts:474
+Defined in: src/client/client.ts:475
 
 ##### Returns
 
@@ -162,7 +162,7 @@ v0.1.26
 
 > **destroy**(): `void`
 
-Defined in: src/client/client.ts:478
+Defined in: src/client/client.ts:479
 
 #### Returns
 
@@ -871,7 +871,7 @@ v0.1.26
 
 > **request**\<`T`\>(`options`): `Promise`\<`T`\>
 
-Defined in: src/client/client.ts:282
+Defined in: src/client/client.ts:283
 
 #### Type Parameters
 

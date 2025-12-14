@@ -6,7 +6,7 @@
 
 # Enumeration: ResourceAction
 
-Defined in: src/client/client.ts:169
+Defined in: src/client/client.ts:170
 
 Enumeration for roblox event actions
 
@@ -14,6 +14,6 @@ Enumeration for roblox event actions
 
 | Enumeration Member | Value | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="create"></a> `Create` | `"CREATE"` | Fired when an item is created | src/client/client.ts:171 |
-| <a id="delete"></a> `Delete` | `"DELETE"` | Fired when an item is deleted | src/client/client.ts:175 |
-| <a id="update"></a> `Update` | `"UPDATE"` | Fired when an item is updated | src/client/client.ts:173 |
+| <a id="create"></a> `Create` | `"CREATE"` | Fired when an item is created | src/client/client.ts:172 |
+| <a id="delete"></a> `Delete` | `"DELETE"` | Fired when an item is deleted | src/client/client.ts:176 |
+| <a id="update"></a> `Update` | `"UPDATE"` | Fired when an item is updated | src/client/client.ts:174 |

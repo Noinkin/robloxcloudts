@@ -6,7 +6,7 @@
 
 # Interface: RobloxClientTypings
 
-Defined in: src/client/client.ts:212
+Defined in: src/client/client.ts:213
 
 ## Methods
 
@@ -16,7 +16,7 @@ Defined in: src/client/client.ts:212
 
 > **emit**\<`K`\>(`event`, ...`args`): `boolean`
 
-Defined in: src/client/client.ts:229
+Defined in: src/client/client.ts:230
 
 ##### Type Parameters
 
@@ -39,7 +39,7 @@ Defined in: src/client/client.ts:229
 
 > **emit**(`event`, ...`args`): `boolean`
 
-Defined in: src/client/client.ts:233
+Defined in: src/client/client.ts:234
 
 ##### Parameters
 
@@ -60,7 +60,7 @@ Defined in: src/client/client.ts:233
 
 > **off**\<`K`\>(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:237
+Defined in: src/client/client.ts:238
 
 ##### Type Parameters
 
@@ -83,7 +83,7 @@ Defined in: src/client/client.ts:237
 
 > **off**(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:241
+Defined in: src/client/client.ts:242
 
 ##### Parameters
 
@@ -104,7 +104,7 @@ Defined in: src/client/client.ts:241
 
 > **on**\<`K`\>(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:213
+Defined in: src/client/client.ts:214
 
 ##### Type Parameters
 
@@ -127,7 +127,7 @@ Defined in: src/client/client.ts:213
 
 > **on**(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:217
+Defined in: src/client/client.ts:218
 
 ##### Parameters
 
@@ -148,7 +148,7 @@ Defined in: src/client/client.ts:217
 
 > **once**\<`K`\>(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:221
+Defined in: src/client/client.ts:222
 
 ##### Type Parameters
 
@@ -171,7 +171,7 @@ Defined in: src/client/client.ts:221
 
 > **once**(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:225
+Defined in: src/client/client.ts:226
 
 ##### Parameters
 
@@ -192,7 +192,7 @@ Defined in: src/client/client.ts:225
 
 > **removeAllListeners**\<`K`\>(`event?`): `this`
 
-Defined in: src/client/client.ts:245
+Defined in: src/client/client.ts:246
 
 ##### Type Parameters
 
@@ -214,7 +214,7 @@ Defined in: src/client/client.ts:245
 
 > **removeAllListeners**(`event`): `this`
 
-Defined in: src/client/client.ts:246
+Defined in: src/client/client.ts:247
 
 ##### Parameters
 
