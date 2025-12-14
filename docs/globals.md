@@ -44,7 +44,6 @@
 | [DeveloperProductLocalizedInfo](interfaces/DeveloperProductLocalizedInfo.md) | - |
 | [DeveloperProductLocalizedInfoArray](interfaces/DeveloperProductLocalizedInfoArray.md) | - |
 | [DeveloperProductOptions](interfaces/DeveloperProductOptions.md) | - |
-| [DeveloperProductThumbnailOptions](interfaces/DeveloperProductThumbnailOptions.md) | - |
 | [DeveloperProductWatch](interfaces/DeveloperProductWatch.md) | - |
 | [PollingConfig](interfaces/PollingConfig.md) | - |
 | [PollingOptions](interfaces/PollingOptions.md) | - |

@@ -66,12 +66,6 @@ export interface DeveloperProductImageSizeOptions {
     height?: number;
 }
 
-export interface DeveloperProductThumbnailOptions {
-    size?: DeveloperProductThumbnailSizes;
-    format?: DeveloperProductThumbnailFormats;
-    isCircular?: boolean;
-}
-
 export enum DeveloperProductThumbnailSizes {
     small = "150x150",
     large = "420x420",
@@ -201,12 +195,6 @@ export class DeveloperProduct {
             name,
             description,
         );
-    }
-
-    async getThumbnail(
-        options: DeveloperProductThumbnailOptions,
-    ): Promise<DeveloperProductLocalizedIconArray> {
-        return this.manager.getThumbnailIcons([this.productId], options);
     }
 
     async setLocalizedIcon(
@@ -354,6 +342,13 @@ export class DeveloperProductsManager extends BaseManager {
         return product;
     }
 
+    /**
+     * Gets information about a developer product by its universe ID and product ID.
+     * @param universeId {number} The universe ID
+     * @param productId {number} The product ID
+     * @returns DeveloperProduct
+     * @beta This API Endpoint is currently in beta and may change at any time
+     */
     async get(
         universeId: number,
         productId: number,
@@ -365,6 +360,13 @@ export class DeveloperProductsManager extends BaseManager {
         return this._convert(data);
     }
 
+    /**
+     * Creates a new developer product in the specified universe.
+     * @param universeId {number} The universe ID
+     * @param options {DeveloperProductOptions & { name: string }} The options for the developer product
+     * @returns DeveloperProduct
+     * @beta This API Endpoint is currently in beta and may change at any time
+     */
     async create(
         universeId: number,
         options: DeveloperProductOptions & { name: string },
@@ -377,6 +379,14 @@ export class DeveloperProductsManager extends BaseManager {
         return this._convert(data);
     }
 
+    /**
+     * Updates an existing developer product.
+     * @param universeId {number} The universe ID
+     * @param productId {number} The product ID
+     * @param options {DeveloperProductOptions & { storePageEnabled?: boolean }} The options for the developer product
+     * @returns DeveloperProduct
+     * @beta This API Endpoint is currently in beta and may change at any time
+     */
     async update(
         universeId: number,
         productId: number,
@@ -390,8 +400,14 @@ export class DeveloperProductsManager extends BaseManager {
         return this._convert(data);
     }
 
-    async getAll(universeId: number): Promise<any> {
-        const allProducts: any[] = [];
+    /**
+     * Gets all developer products for a given universe.
+     * @param universeId {number} The universe ID
+     * @returns DeveloperProduct[]
+     * @beta This API Endpoint is currently in beta and may change at any time
+     */
+    async getAll(universeId: number): Promise<DeveloperProduct[]> {
+        const allProducts: DeveloperProductData[] | DeveloperProduct[] = [];
 
         let pageToken: string | undefined = undefined;
 
@@ -412,7 +428,7 @@ export class DeveloperProductsManager extends BaseManager {
             pageToken = response.nextPageToken;
         } while (pageToken);
 
-        return allProducts.map((data) => this._convert(data));
+        return Promise.all(allProducts.map((data) => this._convert(data)));
     }
 
     async getIcons(
@@ -512,23 +528,6 @@ export class DeveloperProductsManager extends BaseManager {
             body: {
                 description,
             },
-        });
-    }
-
-    async getThumbnailIcons(
-        productIds: number[],
-        options: DeveloperProductThumbnailOptions,
-    ): Promise<DeveloperProductLocalizedIconArray> {
-        const params: Record<string, string | boolean | number[]> = {};
-        params["developerProductIds"] = productIds;
-        if (options.size) params["size"] = options.size;
-        if (options.format) params["format"] = options.format;
-        if (options.isCircular) params["isCircular"] = options.isCircular;
-
-        return this.request({
-            method: RequestTypes.Get,
-            endpoint: `https://thumbnails.roblox.com/v1/developer-products/icons`,
-            params,
         });
     }
 }

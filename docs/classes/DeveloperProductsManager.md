@@ -6,7 +6,7 @@
 
 # Class: DeveloperProductsManager
 
-Defined in: src/universe/developerProducts.ts:275
+Defined in: src/universe/developerProducts.ts:263
 
 ## Extends
 
@@ -52,7 +52,7 @@ Defined in: src/events/base.ts:4
 
 > **\_convert**(`data`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
-Defined in: src/universe/developerProducts.ts:352
+Defined in: src/universe/developerProducts.ts:340
 
 #### Parameters
 
@@ -70,18 +70,25 @@ Defined in: src/universe/developerProducts.ts:352
 
 > **create**(`universeId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:368
+Defined in: src/universe/developerProducts.ts:370
+
+**`Beta`**
+
+Creates a new developer product in the specified universe.
 
 #### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `universeId` | `number` |
-| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `name`: `string`; \} |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `universeId` | `number` | {number} The universe ID |
+| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `name`: `string`; \} | {DeveloperProductOptions & { name: string }} The options for the developer product |
 
 #### Returns
 
 `Promise`\<`any`\>
+
+DeveloperProduct
+ This API Endpoint is currently in beta and may change at any time
 
 ***
 
@@ -89,7 +96,7 @@ Defined in: src/universe/developerProducts.ts:368
 
 > **deleteLocalizedIcon**(`productId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:432
+Defined in: src/universe/developerProducts.ts:448
 
 #### Parameters
 
@@ -108,7 +115,7 @@ Defined in: src/universe/developerProducts.ts:432
 
 > **deleteLocalizedInfo**(`productId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:464
+Defined in: src/universe/developerProducts.ts:480
 
 #### Parameters
 
@@ -127,36 +134,50 @@ Defined in: src/universe/developerProducts.ts:464
 
 > **get**(`universeId`, `productId`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
-Defined in: src/universe/developerProducts.ts:357
+Defined in: src/universe/developerProducts.ts:352
+
+**`Beta`**
+
+Gets information about a developer product by its universe ID and product ID.
 
 #### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `universeId` | `number` |
-| `productId` | `number` |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `universeId` | `number` | {number} The universe ID |
+| `productId` | `number` | {number} The product ID |
 
 #### Returns
 
 `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
+DeveloperProduct
+ This API Endpoint is currently in beta and may change at any time
+
 ***
 
 ### getAll()
 
-> **getAll**(`universeId`): `Promise`\<`any`\>
+> **getAll**(`universeId`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)[]\>
 
-Defined in: src/universe/developerProducts.ts:393
+Defined in: src/universe/developerProducts.ts:409
+
+**`Beta`**
+
+Gets all developer products for a given universe.
 
 #### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `universeId` | `number` |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `universeId` | `number` | {number} The universe ID |
 
 #### Returns
 
-`Promise`\<`any`\>
+`Promise`\<[`DeveloperProduct`](DeveloperProduct.md)[]\>
+
+DeveloperProduct[]
+ This API Endpoint is currently in beta and may change at any time
 
 ***
 
@@ -164,7 +185,7 @@ Defined in: src/universe/developerProducts.ts:393
 
 > **getIcons**(`productId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:418
+Defined in: src/universe/developerProducts.ts:434
 
 #### Parameters
 
@@ -183,7 +204,7 @@ Defined in: src/universe/developerProducts.ts:418
 
 > **getLocalizedInfo**(`productId`): `Promise`\<[`DeveloperProductLocalizedInfoArray`](../interfaces/DeveloperProductLocalizedInfoArray.md)\>
 
-Defined in: src/universe/developerProducts.ts:455
+Defined in: src/universe/developerProducts.ts:471
 
 #### Parameters
 
@@ -194,25 +215,6 @@ Defined in: src/universe/developerProducts.ts:455
 #### Returns
 
 `Promise`\<[`DeveloperProductLocalizedInfoArray`](../interfaces/DeveloperProductLocalizedInfoArray.md)\>
-
-***
-
-### getThumbnailIcons()
-
-> **getThumbnailIcons**(`productIds`, `options`): `Promise`\<[`DeveloperProductLocalizedIconArray`](../interfaces/DeveloperProductLocalizedIconArray.md)\>
-
-Defined in: src/universe/developerProducts.ts:518
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `productIds` | `number`[] |
-| `options` | [`DeveloperProductThumbnailOptions`](../interfaces/DeveloperProductThumbnailOptions.md) |
-
-#### Returns
-
-`Promise`\<[`DeveloperProductLocalizedIconArray`](../interfaces/DeveloperProductLocalizedIconArray.md)\>
 
 ***
 
@@ -248,7 +250,7 @@ Defined in: src/events/base.ts:10
 
 > **startPolling**(`universeId`, `options?`): [`ResourcePoller`](ResourcePoller.md)
 
-Defined in: src/universe/developerProducts.ts:331
+Defined in: src/universe/developerProducts.ts:319
 
 #### Parameters
 
@@ -267,7 +269,7 @@ Defined in: src/universe/developerProducts.ts:331
 
 > **stopPolling**(`universeId`): `void`
 
-Defined in: src/universe/developerProducts.ts:345
+Defined in: src/universe/developerProducts.ts:333
 
 #### Parameters
 
@@ -285,19 +287,26 @@ Defined in: src/universe/developerProducts.ts:345
 
 > **update**(`universeId`, `productId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:380
+Defined in: src/universe/developerProducts.ts:390
+
+**`Beta`**
+
+Updates an existing developer product.
 
 #### Parameters
 
-| Parameter | Type |
-| ------ | ------ |
-| `universeId` | `number` |
-| `productId` | `number` |
-| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `universeId` | `number` | {number} The universe ID |
+| `productId` | `number` | {number} The product ID |
+| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} | {DeveloperProductOptions & { storePageEnabled?: boolean }} The options for the developer product |
 
 #### Returns
 
 `Promise`\<`any`\>
+
+DeveloperProduct
+ This API Endpoint is currently in beta and may change at any time
 
 ***
 
@@ -305,7 +314,7 @@ Defined in: src/universe/developerProducts.ts:380
 
 > **updateLocalizedDescription**(`productId`, `languageCode`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/universe/developerProducts.ts:504
+Defined in: src/universe/developerProducts.ts:520
 
 #### Parameters
 
@@ -325,7 +334,7 @@ Defined in: src/universe/developerProducts.ts:504
 
 > **updateLocalizedIcon**(`productId`, `languageCode`, `imageFile`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:442
+Defined in: src/universe/developerProducts.ts:458
 
 #### Parameters
 
@@ -345,7 +354,7 @@ Defined in: src/universe/developerProducts.ts:442
 
 > **updateLocalizedInfo**(`productId`, `languageCode`, `name`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/universe/developerProducts.ts:474
+Defined in: src/universe/developerProducts.ts:490
 
 #### Parameters
 
@@ -366,7 +375,7 @@ Defined in: src/universe/developerProducts.ts:474
 
 > **updateLocalizedName**(`productId`, `languageCode`, `name`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/universe/developerProducts.ts:490
+Defined in: src/universe/developerProducts.ts:506
 
 #### Parameters
 
@@ -386,7 +395,7 @@ Defined in: src/universe/developerProducts.ts:490
 
 > **watch**(`universeId`, `options?`): [`DeveloperProductWatch`](../interfaces/DeveloperProductWatch.md)
 
-Defined in: src/universe/developerProducts.ts:276
+Defined in: src/universe/developerProducts.ts:264
 
 #### Parameters
 
