@@ -280,8 +280,8 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
         });
     }
 
-    async request<T = any>(options: RequestOptions): Promise<T> {
-        // NOSONAR
+    // prettier-ignore
+    async request<T = any>(options: RequestOptions): Promise<T> { // NOSONAR
         const { method, endpoint, body, params, headers = {} } = options;
 
         const url = new URL(endpoint);

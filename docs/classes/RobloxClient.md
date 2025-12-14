@@ -871,7 +871,7 @@ v0.1.26
 
 > **request**\<`T`\>(`options`): `Promise`\<`T`\>
 
-Defined in: src/client/client.ts:283
+Defined in: src/client/client.ts:284
 
 #### Type Parameters
 

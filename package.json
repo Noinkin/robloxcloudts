@@ -14,7 +14,7 @@
     "author": "noinkin",
     "type": "module",
     "main": "src/index.ts",
-    "tyoes": "src/index.ts",
+    "types": "src/index.ts",
     "scripts": {
         "build": "npx prettier . --write && tsc",
         "start": "node dist/cli/index.js",
