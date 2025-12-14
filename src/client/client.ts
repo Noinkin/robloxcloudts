@@ -1,4 +1,4 @@
-import { EventEmitter } from "events";
+import { EventEmitter } from "node:events";
 import { RateLimitError, RobloxAPIError } from "../util/errors.js";
 import { DeveloperProductsManager } from "../universe/developerProducts.js";
 import {
@@ -329,7 +329,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
                     this.emit(RobloxEvents.RateLimit, {
                         endpoint,
                         waitTime: retryAfter,
-                        limit: parseInt(
+                        limit: Number.parseInt(
                             response.headers.get("x-ratelimit-limit") ?? "0",
                         ),
                         remaining: 0,
@@ -405,7 +405,7 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
     private async checkRateLimit(endpoint: string): Promise<void> {
         const limit = this.rateLimits.get(endpoint);
 
-        if (limit && limit.remaining === 0) {
+        if (limit?.remaining === 0) {
             const now = Date.now();
             const waitTime = limit.reset - now;
 
@@ -429,9 +429,9 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
 
         if (limit && remaining && reset) {
             this.rateLimits.set(endpoint, {
-                limit: parseInt(limit),
-                remaining: parseInt(remaining),
-                reset: parseInt(reset) * 1000,
+                limit: Number.parseInt(limit),
+                remaining: Number.parseInt(remaining),
+                reset: Number.parseInt(reset) * 1000,
             });
         }
     }
@@ -439,8 +439,8 @@ export class RobloxClient extends EventEmitter implements RobloxClientTypings {
     private getRetryAfter(response: Response): number {
         const retryAfter = response.headers.get("retry-after");
         if (retryAfter) {
-            const seconds = parseInt(retryAfter);
-            return isNaN(seconds) ? 10000 : seconds * 1000;
+            const seconds = Number.parseInt(retryAfter);
+            return Number.isNaN(seconds) ? 10000 : seconds * 1000;
         }
         return 10000;
     }
