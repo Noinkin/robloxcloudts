@@ -6,7 +6,7 @@
 
 # Class: GamepassesManager
 
-Defined in: src/universe/gamepasses.ts:256
+Defined in: [src/universe/gamepasses.ts:256](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L256)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: src/universe/gamepasses.ts:256
 
 > **new GamepassesManager**(`client`): `GamepassesManager`
 
-Defined in: src/events/base.ts:6
+Defined in: [src/events/base.ts:6](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L6)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Defined in: src/events/base.ts:6
 
 > `protected` **client**: [`RobloxClient`](RobloxClient.md)
 
-Defined in: src/events/base.ts:4
+Defined in: [src/events/base.ts:4](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L4)
 
 #### Inherited from
 
@@ -52,7 +52,7 @@ Defined in: src/events/base.ts:4
 
 > **\_convert**(`data`): `Promise`\<[`Gamepass`](Gamepass.md)\>
 
-Defined in: src/universe/gamepasses.ts:333
+Defined in: [src/universe/gamepasses.ts:333](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L333)
 
 #### Parameters
 
@@ -70,24 +70,24 @@ Defined in: src/universe/gamepasses.ts:333
 
 > **create**(`universeId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:360
+Defined in: [src/universe/gamepasses.ts:360](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L360)
 
 **`Beta`**
 
-Creates a new developer gamepass in the specified universe.
+Creates a new gamepass in the specified universe.
 
 #### Parameters
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `universeId` | `number` | {number} The universe ID |
-| `options` | [`GamepassOptions`](../interfaces/GamepassOptions.md) & \{ `name`: `string`; \} | {GamepassOptions & { name: string }} The options for the developer gamepass |
+| `options` | `Omit`\<[`GamepassOptions`](../interfaces/GamepassOptions.md), `"name"`\> & \{ `name`: `string`; \} | {GamepassOptions & { name: string }} The options for the gamepass |
 
 #### Returns
 
 `Promise`\<`any`\>
 
-DeveloperProduct
+Gamepass
  This API Endpoint is currently in beta and may change at any time
 
 ***
@@ -96,7 +96,7 @@ DeveloperProduct
 
 > **deleteLocalizedIcon**(`gamePassId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:438
+Defined in: [src/universe/gamepasses.ts:440](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L440)
 
 #### Parameters
 
@@ -115,7 +115,7 @@ Defined in: src/universe/gamepasses.ts:438
 
 > **deleteLocalizedInfo**(`gamePassId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:470
+Defined in: [src/universe/gamepasses.ts:472](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L472)
 
 #### Parameters
 
@@ -134,11 +134,11 @@ Defined in: src/universe/gamepasses.ts:470
 
 > **get**(`universeId`, `gamePassId`): `Promise`\<[`Gamepass`](Gamepass.md)\>
 
-Defined in: src/universe/gamepasses.ts:345
+Defined in: [src/universe/gamepasses.ts:345](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L345)
 
 **`Beta`**
 
-Gets information about a developer gamepass by its universe ID and gamepass ID.
+Gets information about a gamepass by its universe ID and gamepass ID.
 
 #### Parameters
 
@@ -151,7 +151,7 @@ Gets information about a developer gamepass by its universe ID and gamepass ID.
 
 `Promise`\<[`Gamepass`](Gamepass.md)\>
 
-DeveloperProduct
+Gamepass
  This API Endpoint is currently in beta and may change at any time
 
 ***
@@ -160,11 +160,11 @@ DeveloperProduct
 
 > **getAll**(`universeId`): `Promise`\<[`Gamepass`](Gamepass.md)[]\>
 
-Defined in: src/universe/gamepasses.ts:399
+Defined in: [src/universe/gamepasses.ts:401](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L401)
 
 **`Beta`**
 
-Gets all developer products for a given universe.
+Gets all gamepasses for a given universe.
 
 #### Parameters
 
@@ -176,7 +176,7 @@ Gets all developer products for a given universe.
 
 `Promise`\<[`Gamepass`](Gamepass.md)[]\>
 
-DeveloperProduct[]
+Gamepass[]
  This API Endpoint is currently in beta and may change at any time
 
 ***
@@ -185,7 +185,7 @@ DeveloperProduct[]
 
 > **getIcons**(`gamePassId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:424
+Defined in: [src/universe/gamepasses.ts:426](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L426)
 
 #### Parameters
 
@@ -204,7 +204,7 @@ Defined in: src/universe/gamepasses.ts:424
 
 > **getLocalizedInfo**(`gamePassId`): `Promise`\<[`GamepassLocalizedInfoArray`](../interfaces/GamepassLocalizedInfoArray.md)\>
 
-Defined in: src/universe/gamepasses.ts:461
+Defined in: [src/universe/gamepasses.ts:463](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L463)
 
 #### Parameters
 
@@ -222,7 +222,7 @@ Defined in: src/universe/gamepasses.ts:461
 
 > `protected` **request**\<`T`\>(`options`): `Promise`\<`T`\>
 
-Defined in: src/events/base.ts:10
+Defined in: [src/events/base.ts:10](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L10)
 
 #### Type Parameters
 
@@ -250,7 +250,7 @@ Defined in: src/events/base.ts:10
 
 > **startPolling**(`universeId`, `options?`): [`ResourcePoller`](ResourcePoller.md)
 
-Defined in: src/universe/gamepasses.ts:312
+Defined in: [src/universe/gamepasses.ts:312](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L312)
 
 #### Parameters
 
@@ -269,7 +269,7 @@ Defined in: src/universe/gamepasses.ts:312
 
 > **stopPolling**(`universeId`): `void`
 
-Defined in: src/universe/gamepasses.ts:326
+Defined in: [src/universe/gamepasses.ts:326](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L326)
 
 #### Parameters
 
@@ -287,11 +287,11 @@ Defined in: src/universe/gamepasses.ts:326
 
 > **update**(`universeId`, `gamePassId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:380
+Defined in: [src/universe/gamepasses.ts:382](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L382)
 
 **`Beta`**
 
-Updates an existing developer gamepass.
+Updates an existing gamepass.
 
 #### Parameters
 
@@ -299,13 +299,13 @@ Updates an existing developer gamepass.
 | ------ | ------ | ------ |
 | `universeId` | `number` | {number} The universe ID |
 | `gamePassId` | `number` | {number} The gamepass ID |
-| `options` | [`GamepassOptions`](../interfaces/GamepassOptions.md) & \{ `storePageEnabled?`: `boolean`; \} | {GamepassOptions & { storePageEnabled?: boolean }} The options for the developer gamepass |
+| `options` | [`GamepassOptions`](../interfaces/GamepassOptions.md) | {GamepassOptions} The options for the gamepass |
 
 #### Returns
 
 `Promise`\<`any`\>
 
-DeveloperProduct
+Gamepass
  This API Endpoint is currently in beta and may change at any time
 
 ***
@@ -314,7 +314,7 @@ DeveloperProduct
 
 > **updateLocalizedDescription**(`gamePassId`, `languageCode`, `description`): `Promise`\<[`GamepassLocalizedInfo`](../interfaces/GamepassLocalizedInfo.md)\>
 
-Defined in: src/universe/gamepasses.ts:510
+Defined in: [src/universe/gamepasses.ts:512](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L512)
 
 #### Parameters
 
@@ -334,7 +334,7 @@ Defined in: src/universe/gamepasses.ts:510
 
 > **updateLocalizedIcon**(`gamePassId`, `languageCode`, `imageFile`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:448
+Defined in: [src/universe/gamepasses.ts:450](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L450)
 
 #### Parameters
 
@@ -354,7 +354,7 @@ Defined in: src/universe/gamepasses.ts:448
 
 > **updateLocalizedInfo**(`gamePassId`, `languageCode`, `name`, `description`): `Promise`\<[`GamepassLocalizedInfo`](../interfaces/GamepassLocalizedInfo.md)\>
 
-Defined in: src/universe/gamepasses.ts:480
+Defined in: [src/universe/gamepasses.ts:482](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L482)
 
 #### Parameters
 
@@ -375,7 +375,7 @@ Defined in: src/universe/gamepasses.ts:480
 
 > **updateLocalizedName**(`gamePassId`, `languageCode`, `name`): `Promise`\<[`GamepassLocalizedInfo`](../interfaces/GamepassLocalizedInfo.md)\>
 
-Defined in: src/universe/gamepasses.ts:496
+Defined in: [src/universe/gamepasses.ts:498](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L498)
 
 #### Parameters
 
@@ -395,7 +395,7 @@ Defined in: src/universe/gamepasses.ts:496
 
 > **watch**(`universeId`, `options?`): [`GamepassWatch`](../interfaces/GamepassWatch.md)
 
-Defined in: src/universe/gamepasses.ts:257
+Defined in: [src/universe/gamepasses.ts:257](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L257)
 
 #### Parameters
 

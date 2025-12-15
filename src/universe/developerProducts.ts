@@ -59,6 +59,7 @@ export interface DeveloperProductOptions {
     price?: number;
     imageFile?: Buffer;
     isRegionalPricingEnabled?: boolean;
+    storePageEnabled?: boolean;
 }
 
 export interface DeveloperProductImageSizeOptions {
@@ -369,7 +370,9 @@ export class DeveloperProductsManager extends BaseManager {
      */
     async create(
         universeId: number,
-        options: DeveloperProductOptions & { name: string },
+        options: Omit<DeveloperProductOptions, "storePageEnabled" | "name"> & {
+            name: string;
+        },
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Post,
@@ -383,14 +386,14 @@ export class DeveloperProductsManager extends BaseManager {
      * Updates an existing developer product.
      * @param universeId {number} The universe ID
      * @param productId {number} The product ID
-     * @param options {DeveloperProductOptions & { storePageEnabled?: boolean }} The options for the developer product
+     * @param options {DeveloperProductOptions} The options for the developer product
      * @returns DeveloperProduct
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async update(
         universeId: number,
         productId: number,
-        options: DeveloperProductOptions & { storePageEnabled?: boolean },
+        options: DeveloperProductOptions,
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Patch,

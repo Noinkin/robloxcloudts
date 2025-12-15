@@ -6,7 +6,7 @@
 
 # Abstract Class: BaseManager
 
-Defined in: src/events/base.ts:3
+Defined in: [src/events/base.ts:3](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L3)
 
 ## Extended by
 
@@ -19,7 +19,7 @@ Defined in: src/events/base.ts:3
 
 > **new BaseManager**(`client`): `BaseManager`
 
-Defined in: src/events/base.ts:6
+Defined in: [src/events/base.ts:6](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L6)
 
 #### Parameters
 
@@ -37,7 +37,7 @@ Defined in: src/events/base.ts:6
 
 > `protected` **client**: [`RobloxClient`](RobloxClient.md)
 
-Defined in: src/events/base.ts:4
+Defined in: [src/events/base.ts:4](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L4)
 
 ## Methods
 
@@ -45,7 +45,7 @@ Defined in: src/events/base.ts:4
 
 > `protected` **request**\<`T`\>(`options`): `Promise`\<`T`\>
 
-Defined in: src/events/base.ts:10
+Defined in: [src/events/base.ts:10](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L10)
 
 #### Type Parameters
 

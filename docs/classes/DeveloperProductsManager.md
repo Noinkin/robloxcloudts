@@ -6,7 +6,7 @@
 
 # Class: DeveloperProductsManager
 
-Defined in: src/universe/developerProducts.ts:263
+Defined in: [src/universe/developerProducts.ts:264](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L264)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: src/universe/developerProducts.ts:263
 
 > **new DeveloperProductsManager**(`client`): `DeveloperProductsManager`
 
-Defined in: src/events/base.ts:6
+Defined in: [src/events/base.ts:6](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L6)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Defined in: src/events/base.ts:6
 
 > `protected` **client**: [`RobloxClient`](RobloxClient.md)
 
-Defined in: src/events/base.ts:4
+Defined in: [src/events/base.ts:4](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L4)
 
 #### Inherited from
 
@@ -52,7 +52,7 @@ Defined in: src/events/base.ts:4
 
 > **\_convert**(`data`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
-Defined in: src/universe/developerProducts.ts:340
+Defined in: [src/universe/developerProducts.ts:341](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L341)
 
 #### Parameters
 
@@ -70,7 +70,7 @@ Defined in: src/universe/developerProducts.ts:340
 
 > **create**(`universeId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:370
+Defined in: [src/universe/developerProducts.ts:371](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L371)
 
 **`Beta`**
 
@@ -81,7 +81,7 @@ Creates a new developer product in the specified universe.
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `universeId` | `number` | {number} The universe ID |
-| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `name`: `string`; \} | {DeveloperProductOptions & { name: string }} The options for the developer product |
+| `options` | `Omit`\<[`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md), `"storePageEnabled"` \| `"name"`\> & \{ `name`: `string`; \} | {DeveloperProductOptions & { name: string }} The options for the developer product |
 
 #### Returns
 
@@ -96,7 +96,7 @@ DeveloperProduct
 
 > **deleteLocalizedIcon**(`productId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:448
+Defined in: [src/universe/developerProducts.ts:451](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L451)
 
 #### Parameters
 
@@ -115,7 +115,7 @@ Defined in: src/universe/developerProducts.ts:448
 
 > **deleteLocalizedInfo**(`productId`, `languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:480
+Defined in: [src/universe/developerProducts.ts:483](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L483)
 
 #### Parameters
 
@@ -134,7 +134,7 @@ Defined in: src/universe/developerProducts.ts:480
 
 > **get**(`universeId`, `productId`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)\>
 
-Defined in: src/universe/developerProducts.ts:352
+Defined in: [src/universe/developerProducts.ts:353](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L353)
 
 **`Beta`**
 
@@ -160,7 +160,7 @@ DeveloperProduct
 
 > **getAll**(`universeId`): `Promise`\<[`DeveloperProduct`](DeveloperProduct.md)[]\>
 
-Defined in: src/universe/developerProducts.ts:409
+Defined in: [src/universe/developerProducts.ts:412](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L412)
 
 **`Beta`**
 
@@ -185,7 +185,7 @@ DeveloperProduct[]
 
 > **getIcons**(`productId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:434
+Defined in: [src/universe/developerProducts.ts:437](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L437)
 
 #### Parameters
 
@@ -204,7 +204,7 @@ Defined in: src/universe/developerProducts.ts:434
 
 > **getLocalizedInfo**(`productId`): `Promise`\<[`DeveloperProductLocalizedInfoArray`](../interfaces/DeveloperProductLocalizedInfoArray.md)\>
 
-Defined in: src/universe/developerProducts.ts:471
+Defined in: [src/universe/developerProducts.ts:474](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L474)
 
 #### Parameters
 
@@ -222,7 +222,7 @@ Defined in: src/universe/developerProducts.ts:471
 
 > `protected` **request**\<`T`\>(`options`): `Promise`\<`T`\>
 
-Defined in: src/events/base.ts:10
+Defined in: [src/events/base.ts:10](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/events/base.ts#L10)
 
 #### Type Parameters
 
@@ -250,7 +250,7 @@ Defined in: src/events/base.ts:10
 
 > **startPolling**(`universeId`, `options?`): [`ResourcePoller`](ResourcePoller.md)
 
-Defined in: src/universe/developerProducts.ts:319
+Defined in: [src/universe/developerProducts.ts:320](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L320)
 
 #### Parameters
 
@@ -269,7 +269,7 @@ Defined in: src/universe/developerProducts.ts:319
 
 > **stopPolling**(`universeId`): `void`
 
-Defined in: src/universe/developerProducts.ts:333
+Defined in: [src/universe/developerProducts.ts:334](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L334)
 
 #### Parameters
 
@@ -287,7 +287,7 @@ Defined in: src/universe/developerProducts.ts:333
 
 > **update**(`universeId`, `productId`, `options`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:390
+Defined in: [src/universe/developerProducts.ts:393](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L393)
 
 **`Beta`**
 
@@ -299,7 +299,7 @@ Updates an existing developer product.
 | ------ | ------ | ------ |
 | `universeId` | `number` | {number} The universe ID |
 | `productId` | `number` | {number} The product ID |
-| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) & \{ `storePageEnabled?`: `boolean`; \} | {DeveloperProductOptions & { storePageEnabled?: boolean }} The options for the developer product |
+| `options` | [`DeveloperProductOptions`](../interfaces/DeveloperProductOptions.md) | {DeveloperProductOptions} The options for the developer product |
 
 #### Returns
 
@@ -314,7 +314,7 @@ DeveloperProduct
 
 > **updateLocalizedDescription**(`productId`, `languageCode`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/universe/developerProducts.ts:520
+Defined in: [src/universe/developerProducts.ts:523](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L523)
 
 #### Parameters
 
@@ -334,7 +334,7 @@ Defined in: src/universe/developerProducts.ts:520
 
 > **updateLocalizedIcon**(`productId`, `languageCode`, `imageFile`): `Promise`\<`any`\>
 
-Defined in: src/universe/developerProducts.ts:458
+Defined in: [src/universe/developerProducts.ts:461](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L461)
 
 #### Parameters
 
@@ -354,7 +354,7 @@ Defined in: src/universe/developerProducts.ts:458
 
 > **updateLocalizedInfo**(`productId`, `languageCode`, `name`, `description`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/universe/developerProducts.ts:490
+Defined in: [src/universe/developerProducts.ts:493](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L493)
 
 #### Parameters
 
@@ -375,7 +375,7 @@ Defined in: src/universe/developerProducts.ts:490
 
 > **updateLocalizedName**(`productId`, `languageCode`, `name`): `Promise`\<[`DeveloperProductLocalizedInfo`](../interfaces/DeveloperProductLocalizedInfo.md)\>
 
-Defined in: src/universe/developerProducts.ts:506
+Defined in: [src/universe/developerProducts.ts:509](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L509)
 
 #### Parameters
 
@@ -395,7 +395,7 @@ Defined in: src/universe/developerProducts.ts:506
 
 > **watch**(`universeId`, `options?`): [`DeveloperProductWatch`](../interfaces/DeveloperProductWatch.md)
 
-Defined in: src/universe/developerProducts.ts:264
+Defined in: [src/universe/developerProducts.ts:265](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/developerProducts.ts#L265)
 
 #### Parameters
 

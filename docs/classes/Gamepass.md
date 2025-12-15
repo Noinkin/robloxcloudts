@@ -6,7 +6,7 @@
 
 # Class: Gamepass
 
-Defined in: src/universe/gamepasses.ts:84
+Defined in: [src/universe/gamepasses.ts:84](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L84)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: src/universe/gamepasses.ts:84
 
 > **new Gamepass**(`manager`, `data`): `Gamepass`
 
-Defined in: src/universe/gamepasses.ts:101
+Defined in: [src/universe/gamepasses.ts:101](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L101)
 
 #### Parameters
 
@@ -33,7 +33,7 @@ Defined in: src/universe/gamepasses.ts:101
 
 > `readonly` **createdTimestamp**: `Date`
 
-Defined in: src/universe/gamepasses.ts:96
+Defined in: [src/universe/gamepasses.ts:96](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L96)
 
 ***
 
@@ -41,7 +41,7 @@ Defined in: src/universe/gamepasses.ts:96
 
 > **description**: `string`
 
-Defined in: src/universe/gamepasses.ts:87
+Defined in: [src/universe/gamepasses.ts:87](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L87)
 
 ***
 
@@ -49,7 +49,7 @@ Defined in: src/universe/gamepasses.ts:87
 
 > `readonly` **gamePassId**: `number`
 
-Defined in: src/universe/gamepasses.ts:85
+Defined in: [src/universe/gamepasses.ts:85](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L85)
 
 ***
 
@@ -57,7 +57,7 @@ Defined in: src/universe/gamepasses.ts:85
 
 > **iconImageAssetId**: `number`
 
-Defined in: src/universe/gamepasses.ts:88
+Defined in: [src/universe/gamepasses.ts:88](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L88)
 
 ***
 
@@ -65,7 +65,7 @@ Defined in: src/universe/gamepasses.ts:88
 
 > **isForSale**: `boolean`
 
-Defined in: src/universe/gamepasses.ts:90
+Defined in: [src/universe/gamepasses.ts:90](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L90)
 
 ***
 
@@ -73,7 +73,7 @@ Defined in: src/universe/gamepasses.ts:90
 
 > **name**: `string`
 
-Defined in: src/universe/gamepasses.ts:86
+Defined in: [src/universe/gamepasses.ts:86](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L86)
 
 ***
 
@@ -81,7 +81,7 @@ Defined in: src/universe/gamepasses.ts:86
 
 > **priceInformation**: \{ `defaultPriceInRobux`: `number`; `enabledFeatures`: `string`[]; \}
 
-Defined in: src/universe/gamepasses.ts:92
+Defined in: [src/universe/gamepasses.ts:92](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L92)
 
 #### defaultPriceInRobux
 
@@ -97,7 +97,7 @@ Defined in: src/universe/gamepasses.ts:92
 
 > **storePageEnabled**: `boolean`
 
-Defined in: src/universe/gamepasses.ts:91
+Defined in: [src/universe/gamepasses.ts:91](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L91)
 
 ***
 
@@ -105,7 +105,7 @@ Defined in: src/universe/gamepasses.ts:91
 
 > `readonly` **universeId**: `number`
 
-Defined in: src/universe/gamepasses.ts:89
+Defined in: [src/universe/gamepasses.ts:89](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L89)
 
 ***
 
@@ -113,7 +113,7 @@ Defined in: src/universe/gamepasses.ts:89
 
 > **updatedTimestamp**: `Date`
 
-Defined in: src/universe/gamepasses.ts:97
+Defined in: [src/universe/gamepasses.ts:97](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L97)
 
 ## Accessors
 
@@ -123,7 +123,7 @@ Defined in: src/universe/gamepasses.ts:97
 
 > **get** **createdAt**(): `number`
 
-Defined in: src/universe/gamepasses.ts:229
+Defined in: [src/universe/gamepasses.ts:229](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L229)
 
 ##### Returns
 
@@ -137,7 +137,7 @@ Defined in: src/universe/gamepasses.ts:229
 
 > **get** **price**(): `number`
 
-Defined in: src/universe/gamepasses.ts:225
+Defined in: [src/universe/gamepasses.ts:225](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L225)
 
 ##### Returns
 
@@ -151,7 +151,7 @@ Defined in: src/universe/gamepasses.ts:225
 
 > **get** **updatedAt**(): `number`
 
-Defined in: src/universe/gamepasses.ts:233
+Defined in: [src/universe/gamepasses.ts:233](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L233)
 
 ##### Returns
 
@@ -165,7 +165,7 @@ Defined in: src/universe/gamepasses.ts:233
 
 > **get** **url**(): `string`
 
-Defined in: src/universe/gamepasses.ts:221
+Defined in: [src/universe/gamepasses.ts:221](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L221)
 
 ##### Returns
 
@@ -177,7 +177,7 @@ Defined in: src/universe/gamepasses.ts:221
 
 > **deleteLocalizedIcon**(`languageCode`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:206
+Defined in: [src/universe/gamepasses.ts:206](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L206)
 
 #### Parameters
 
@@ -195,7 +195,7 @@ Defined in: src/universe/gamepasses.ts:206
 
 > **edit**(`options`): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:124
+Defined in: [src/universe/gamepasses.ts:124](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L124)
 
 #### Parameters
 
@@ -213,7 +213,7 @@ Defined in: src/universe/gamepasses.ts:124
 
 > **equals**(`other`): `boolean`
 
-Defined in: src/universe/gamepasses.ts:214
+Defined in: [src/universe/gamepasses.ts:214](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L214)
 
 #### Parameters
 
@@ -231,7 +231,7 @@ Defined in: src/universe/gamepasses.ts:214
 
 > **fetch**(): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:118
+Defined in: [src/universe/gamepasses.ts:118](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L118)
 
 #### Returns
 
@@ -243,7 +243,7 @@ Defined in: src/universe/gamepasses.ts:118
 
 > **getIcon**(`options`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:210
+Defined in: [src/universe/gamepasses.ts:210](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L210)
 
 #### Parameters
 
@@ -261,7 +261,7 @@ Defined in: src/universe/gamepasses.ts:210
 
 > **getLocalizedInfo**(): `Promise`\<[`GamepassLocalizedInfoArray`](../interfaces/GamepassLocalizedInfoArray.md)\>
 
-Defined in: src/universe/gamepasses.ts:156
+Defined in: [src/universe/gamepasses.ts:156](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L156)
 
 #### Returns
 
@@ -273,7 +273,7 @@ Defined in: src/universe/gamepasses.ts:156
 
 > **setDescription**(`description`): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:140
+Defined in: [src/universe/gamepasses.ts:140](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L140)
 
 #### Parameters
 
@@ -291,7 +291,7 @@ Defined in: src/universe/gamepasses.ts:140
 
 > **setForSale**(`isForSale`): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:148
+Defined in: [src/universe/gamepasses.ts:148](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L148)
 
 #### Parameters
 
@@ -309,7 +309,7 @@ Defined in: src/universe/gamepasses.ts:148
 
 > **setLocalizedDescription**(`languageCode`, `description`): `Promise`\<[`GamepassLocalizedInfo`](../interfaces/GamepassLocalizedInfo.md)\>
 
-Defined in: src/universe/gamepasses.ts:171
+Defined in: [src/universe/gamepasses.ts:171](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L171)
 
 #### Parameters
 
@@ -328,7 +328,7 @@ Defined in: src/universe/gamepasses.ts:171
 
 > **setLocalizedIcon**(`languageCode`, `imageFile`): `Promise`\<`any`\>
 
-Defined in: src/universe/gamepasses.ts:195
+Defined in: [src/universe/gamepasses.ts:195](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L195)
 
 #### Parameters
 
@@ -347,7 +347,7 @@ Defined in: src/universe/gamepasses.ts:195
 
 > **setLocalizedInfo**(`languageCode`, `name`, `description`): `Promise`\<[`GamepassLocalizedInfo`](../interfaces/GamepassLocalizedInfo.md)\>
 
-Defined in: src/universe/gamepasses.ts:182
+Defined in: [src/universe/gamepasses.ts:182](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L182)
 
 #### Parameters
 
@@ -367,7 +367,7 @@ Defined in: src/universe/gamepasses.ts:182
 
 > **setLocalizedName**(`languageCode`, `name`): `Promise`\<[`GamepassLocalizedInfo`](../interfaces/GamepassLocalizedInfo.md)\>
 
-Defined in: src/universe/gamepasses.ts:160
+Defined in: [src/universe/gamepasses.ts:160](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L160)
 
 #### Parameters
 
@@ -386,7 +386,7 @@ Defined in: src/universe/gamepasses.ts:160
 
 > **setName**(`name`): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:136
+Defined in: [src/universe/gamepasses.ts:136](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L136)
 
 #### Parameters
 
@@ -404,7 +404,7 @@ Defined in: src/universe/gamepasses.ts:136
 
 > **setPrice**(`price`): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:144
+Defined in: [src/universe/gamepasses.ts:144](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L144)
 
 #### Parameters
 
@@ -422,7 +422,7 @@ Defined in: src/universe/gamepasses.ts:144
 
 > **setStorePageEnabled**(`enabled`): `Promise`\<`Gamepass`\>
 
-Defined in: src/universe/gamepasses.ts:152
+Defined in: [src/universe/gamepasses.ts:152](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L152)
 
 #### Parameters
 
@@ -440,7 +440,7 @@ Defined in: src/universe/gamepasses.ts:152
 
 > **toJSON**(): [`GamepassData`](../interfaces/GamepassData.md)
 
-Defined in: src/universe/gamepasses.ts:237
+Defined in: [src/universe/gamepasses.ts:237](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L237)
 
 #### Returns
 
@@ -452,7 +452,7 @@ Defined in: src/universe/gamepasses.ts:237
 
 > **toString**(): `string`
 
-Defined in: src/universe/gamepasses.ts:251
+Defined in: [src/universe/gamepasses.ts:251](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/universe/gamepasses.ts#L251)
 
 #### Returns
 

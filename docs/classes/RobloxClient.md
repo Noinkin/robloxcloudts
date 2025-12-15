@@ -6,7 +6,7 @@
 
 # Class: RobloxClient
 
-Defined in: src/client/client.ts:252
+Defined in: [src/client/client.ts:252](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L252)
 
 ## Extends
 
@@ -22,7 +22,7 @@ Defined in: src/client/client.ts:252
 
 > **new RobloxClient**(`options`): `RobloxClient`
 
-Defined in: src/client/client.ts:264
+Defined in: [src/client/client.ts:264](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L264)
 
 #### Parameters
 
@@ -44,7 +44,7 @@ Defined in: src/client/client.ts:264
 
 > `readonly` **developerProducts**: [`DeveloperProductsManager`](DeveloperProductsManager.md)
 
-Defined in: src/client/client.ts:262
+Defined in: [src/client/client.ts:262](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L262)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: src/client/client.ts:262
 
 > `readonly` **polling**: [`PollingManager`](PollingManager.md)
 
-Defined in: src/client/client.ts:259
+Defined in: [src/client/client.ts:259](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L259)
 
 ## Accessors
 
@@ -62,7 +62,7 @@ Defined in: src/client/client.ts:259
 
 > **get** **ready**(): `boolean`
 
-Defined in: src/client/client.ts:475
+Defined in: [src/client/client.ts:475](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L475)
 
 ##### Returns
 
@@ -162,7 +162,7 @@ v0.1.26
 
 > **destroy**(): `void`
 
-Defined in: src/client/client.ts:479
+Defined in: [src/client/client.ts:479](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L479)
 
 #### Returns
 
@@ -871,7 +871,7 @@ v0.1.26
 
 > **request**\<`T`\>(`options`): `Promise`\<`T`\>
 
-Defined in: src/client/client.ts:284
+Defined in: [src/client/client.ts:284](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L284)
 
 #### Type Parameters
 

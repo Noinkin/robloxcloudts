@@ -6,7 +6,7 @@
 
 # Class: PollingManager
 
-Defined in: src/client/polling.ts:165
+Defined in: [src/client/polling.ts:165](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L165)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: src/client/polling.ts:165
 
 > **new PollingManager**(`client`): `PollingManager`
 
-Defined in: src/client/polling.ts:169
+Defined in: [src/client/polling.ts:169](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L169)
 
 #### Parameters
 
@@ -32,7 +32,7 @@ Defined in: src/client/polling.ts:169
 
 > **destroy**(): `void`
 
-Defined in: src/client/polling.ts:236
+Defined in: [src/client/polling.ts:236](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L236)
 
 #### Returns
 
@@ -44,7 +44,7 @@ Defined in: src/client/polling.ts:236
 
 > **getActivePollers**(): `string`[]
 
-Defined in: src/client/polling.ts:221
+Defined in: [src/client/polling.ts:221](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L221)
 
 #### Returns
 
@@ -56,7 +56,7 @@ Defined in: src/client/polling.ts:221
 
 > **getPoller**(`key`): [`ResourcePoller`](ResourcePoller.md)\<`any`\> \| `undefined`
 
-Defined in: src/client/polling.ts:217
+Defined in: [src/client/polling.ts:217](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L217)
 
 #### Parameters
 
@@ -74,7 +74,7 @@ Defined in: src/client/polling.ts:217
 
 > **removePoller**(`key`): `void`
 
-Defined in: src/client/polling.ts:227
+Defined in: [src/client/polling.ts:227](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L227)
 
 #### Parameters
 
@@ -92,7 +92,7 @@ Defined in: src/client/polling.ts:227
 
 > **startPolling**\<`T`\>(`resource`, `resourceId`, `fetchFunction`, `options`): [`ResourcePoller`](ResourcePoller.md)\<`T`\>
 
-Defined in: src/client/polling.ts:173
+Defined in: [src/client/polling.ts:173](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L173)
 
 #### Type Parameters
 
@@ -119,7 +119,7 @@ Defined in: src/client/polling.ts:173
 
 > **stopAll**(): `void`
 
-Defined in: src/client/polling.ts:211
+Defined in: [src/client/polling.ts:211](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L211)
 
 #### Returns
 
@@ -131,7 +131,7 @@ Defined in: src/client/polling.ts:211
 
 > **stopPolling**(`resource`, `resourceId`): `void`
 
-Defined in: src/client/polling.ts:203
+Defined in: [src/client/polling.ts:203](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L203)
 
 #### Parameters
 

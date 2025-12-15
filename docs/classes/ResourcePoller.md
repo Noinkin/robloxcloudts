@@ -6,7 +6,7 @@
 
 # Class: ResourcePoller\<T\>
 
-Defined in: src/client/polling.ts:36
+Defined in: [src/client/polling.ts:36](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L36)
 
 ## Type Parameters
 
@@ -20,7 +20,7 @@ Defined in: src/client/polling.ts:36
 
 > **new ResourcePoller**\<`T`\>(`client`, `config`): `ResourcePoller`\<`T`\>
 
-Defined in: src/client/polling.ts:41
+Defined in: [src/client/polling.ts:41](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L41)
 
 #### Parameters
 
@@ -41,7 +41,7 @@ Defined in: src/client/polling.ts:41
 
 > **get** **active**(): `boolean`
 
-Defined in: src/client/polling.ts:160
+Defined in: [src/client/polling.ts:160](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L160)
 
 ##### Returns
 
@@ -53,7 +53,7 @@ Defined in: src/client/polling.ts:160
 
 > **clearCache**(): `void`
 
-Defined in: src/client/polling.ts:156
+Defined in: [src/client/polling.ts:156](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L156)
 
 #### Returns
 
@@ -65,7 +65,7 @@ Defined in: src/client/polling.ts:156
 
 > **getCache**(): `Map`\<`string`, `T`\>
 
-Defined in: src/client/polling.ts:152
+Defined in: [src/client/polling.ts:152](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L152)
 
 #### Returns
 
@@ -77,7 +77,7 @@ Defined in: src/client/polling.ts:152
 
 > **start**(): `void`
 
-Defined in: src/client/polling.ts:53
+Defined in: [src/client/polling.ts:53](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L53)
 
 #### Returns
 
@@ -89,7 +89,7 @@ Defined in: src/client/polling.ts:53
 
 > **stop**(): `void`
 
-Defined in: src/client/polling.ts:77
+Defined in: [src/client/polling.ts:77](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/polling.ts#L77)
 
 #### Returns
 

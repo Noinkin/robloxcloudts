@@ -6,7 +6,7 @@
 
 # Class: RateLimitError
 
-Defined in: src/util/errors.ts:24
+Defined in: [src/util/errors.ts:24](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L24)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: src/util/errors.ts:24
 
 > **new RateLimitError**(`message`, `endpoint`, `method`, `retryAfter`): `RateLimitError`
 
-Defined in: src/util/errors.ts:27
+Defined in: [src/util/errors.ts:27](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L27)
 
 #### Parameters
 
@@ -55,7 +55,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:26
 
 > `readonly` `optional` **code**: `string`
 
-Defined in: src/util/errors.ts:5
+Defined in: [src/util/errors.ts:5](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L5)
 
 #### Inherited from
 
@@ -67,7 +67,7 @@ Defined in: src/util/errors.ts:5
 
 > `readonly` **endpoint**: `string`
 
-Defined in: src/util/errors.ts:3
+Defined in: [src/util/errors.ts:3](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L3)
 
 #### Inherited from
 
@@ -91,7 +91,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1077
 
 > `readonly` **method**: `string`
 
-Defined in: src/util/errors.ts:4
+Defined in: [src/util/errors.ts:4](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L4)
 
 #### Inherited from
 
@@ -115,7 +115,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 > `readonly` **retryAfter**: `number`
 
-Defined in: src/util/errors.ts:25
+Defined in: [src/util/errors.ts:25](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L25)
 
 ***
 
@@ -135,7 +135,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1078
 
 > `readonly` **status**: `number`
 
-Defined in: src/util/errors.ts:2
+Defined in: [src/util/errors.ts:2](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L2)
 
 #### Inherited from
 

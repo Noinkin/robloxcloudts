@@ -6,7 +6,7 @@
 
 # Interface: RobloxClientTypings
 
-Defined in: src/client/client.ts:213
+Defined in: [src/client/client.ts:213](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L213)
 
 ## Methods
 
@@ -16,7 +16,7 @@ Defined in: src/client/client.ts:213
 
 > **emit**\<`K`\>(`event`, ...`args`): `boolean`
 
-Defined in: src/client/client.ts:230
+Defined in: [src/client/client.ts:230](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L230)
 
 ##### Type Parameters
 
@@ -39,7 +39,7 @@ Defined in: src/client/client.ts:230
 
 > **emit**(`event`, ...`args`): `boolean`
 
-Defined in: src/client/client.ts:234
+Defined in: [src/client/client.ts:234](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L234)
 
 ##### Parameters
 
@@ -60,7 +60,7 @@ Defined in: src/client/client.ts:234
 
 > **off**\<`K`\>(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:238
+Defined in: [src/client/client.ts:238](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L238)
 
 ##### Type Parameters
 
@@ -83,7 +83,7 @@ Defined in: src/client/client.ts:238
 
 > **off**(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:242
+Defined in: [src/client/client.ts:242](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L242)
 
 ##### Parameters
 
@@ -104,7 +104,7 @@ Defined in: src/client/client.ts:242
 
 > **on**\<`K`\>(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:214
+Defined in: [src/client/client.ts:214](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L214)
 
 ##### Type Parameters
 
@@ -127,7 +127,7 @@ Defined in: src/client/client.ts:214
 
 > **on**(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:218
+Defined in: [src/client/client.ts:218](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L218)
 
 ##### Parameters
 
@@ -148,7 +148,7 @@ Defined in: src/client/client.ts:218
 
 > **once**\<`K`\>(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:222
+Defined in: [src/client/client.ts:222](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L222)
 
 ##### Type Parameters
 
@@ -171,7 +171,7 @@ Defined in: src/client/client.ts:222
 
 > **once**(`event`, `listener`): `this`
 
-Defined in: src/client/client.ts:226
+Defined in: [src/client/client.ts:226](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L226)
 
 ##### Parameters
 
@@ -192,7 +192,7 @@ Defined in: src/client/client.ts:226
 
 > **removeAllListeners**\<`K`\>(`event?`): `this`
 
-Defined in: src/client/client.ts:246
+Defined in: [src/client/client.ts:246](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L246)
 
 ##### Type Parameters
 
@@ -214,7 +214,7 @@ Defined in: src/client/client.ts:246
 
 > **removeAllListeners**(`event`): `this`
 
-Defined in: src/client/client.ts:247
+Defined in: [src/client/client.ts:247](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/client/client.ts#L247)
 
 ##### Parameters
 

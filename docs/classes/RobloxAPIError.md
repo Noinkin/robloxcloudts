@@ -6,7 +6,7 @@
 
 # Class: RobloxAPIError
 
-Defined in: src/util/errors.ts:1
+Defined in: [src/util/errors.ts:1](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L1)
 
 ## Extends
 
@@ -22,7 +22,7 @@ Defined in: src/util/errors.ts:1
 
 > **new RobloxAPIError**(`message`, `status`, `endpoint`, `method`, `code?`): `RobloxAPIError`
 
-Defined in: src/util/errors.ts:7
+Defined in: [src/util/errors.ts:7](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L7)
 
 #### Parameters
 
@@ -60,7 +60,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:26
 
 > `readonly` `optional` **code**: `string`
 
-Defined in: src/util/errors.ts:5
+Defined in: [src/util/errors.ts:5](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L5)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: src/util/errors.ts:5
 
 > `readonly` **endpoint**: `string`
 
-Defined in: src/util/errors.ts:3
+Defined in: [src/util/errors.ts:3](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L3)
 
 ***
 
@@ -88,7 +88,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1077
 
 > `readonly` **method**: `string`
 
-Defined in: src/util/errors.ts:4
+Defined in: [src/util/errors.ts:4](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L4)
 
 ***
 
@@ -120,7 +120,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1078
 
 > `readonly` **status**: `number`
 
-Defined in: src/util/errors.ts:2
+Defined in: [src/util/errors.ts:2](https://github.com/Noinkin/robloxcloudts/blob/d123b68a7b621174076cdb2a986805afc636738e/src/util/errors.ts#L2)
 
 ***
 

@@ -249,7 +249,7 @@ export class Gamepass {
     }
 
     toString(): string {
-        return `DeveloperProduct[${this.gamePassId}] ${this.name}`;
+        return `Gamepass[${this.gamePassId}] ${this.name}`;
     }
 }
 
@@ -278,7 +278,7 @@ export class GamepassesManager extends BaseManager {
         }
 
         return {
-            onCreate: (callback: (...productData: any) => void) => {
+            onCreate: (callback: (...gamepassData: any) => void) => {
                 const event = buildResourceEvent(
                     ResourceEvents.Gamepass,
                     ResourceAction.Create,
@@ -287,7 +287,7 @@ export class GamepassesManager extends BaseManager {
                 this.client.on(event, callback);
                 return this;
             },
-            onUpdate: (callback: (...productData: any) => void) => {
+            onUpdate: (callback: (...gamepassData: any) => void) => {
                 const event = buildResourceEvent(
                     ResourceEvents.Gamepass,
                     ResourceAction.Update,
@@ -296,7 +296,7 @@ export class GamepassesManager extends BaseManager {
                 this.client.on(event, callback);
                 return this;
             },
-            onDelete: (callback: (...productData: any) => void) => {
+            onDelete: (callback: (...gamepassData: any) => void) => {
                 const event = buildResourceEvent(
                     ResourceEvents.Gamepass,
                     ResourceAction.Delete,
@@ -311,7 +311,7 @@ export class GamepassesManager extends BaseManager {
 
     startPolling(universeId: number, options?: PollingOptions): ResourcePoller {
         return this.client.polling.startPolling(
-            ResourceEvents.DeveloperProduct,
+            ResourceEvents.Gamepass,
             universeId.toString(),
             () => this.getAll(universeId),
             {
@@ -325,7 +325,7 @@ export class GamepassesManager extends BaseManager {
 
     stopPolling(universeId: number): void {
         this.client.polling.stopPolling(
-            ResourceEvents.DeveloperProduct,
+            ResourceEvents.Gamepass,
             universeId.toString(),
         );
     }
@@ -336,10 +336,10 @@ export class GamepassesManager extends BaseManager {
     }
 
     /**
-     * Gets information about a developer gamepass by its universe ID and gamepass ID.
+     * Gets information about a gamepass by its universe ID and gamepass ID.
      * @param universeId {number} The universe ID
      * @param gamePassId {number} The gamepass ID
-     * @returns DeveloperProduct
+     * @returns Gamepass
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async get(universeId: number, gamePassId: number): Promise<Gamepass> {
@@ -351,15 +351,17 @@ export class GamepassesManager extends BaseManager {
     }
 
     /**
-     * Creates a new developer gamepass in the specified universe.
+     * Creates a new gamepass in the specified universe.
      * @param universeId {number} The universe ID
-     * @param options {GamepassOptions & { name: string }} The options for the developer gamepass
-     * @returns DeveloperProduct
+     * @param options {GamepassOptions & { name: string }} The options for the gamepass
+     * @returns Gamepass
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async create(
         universeId: number,
-        options: GamepassOptions & { name: string },
+        options: Omit<GamepassOptions, "name"> & {
+            name: string;
+        },
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Post,
@@ -370,17 +372,17 @@ export class GamepassesManager extends BaseManager {
     }
 
     /**
-     * Updates an existing developer gamepass.
+     * Updates an existing gamepass.
      * @param universeId {number} The universe ID
      * @param gamePassId {number} The gamepass ID
-     * @param options {GamepassOptions & { storePageEnabled?: boolean }} The options for the developer gamepass
-     * @returns DeveloperProduct
+     * @param options {GamepassOptions} The options for the gamepass
+     * @returns Gamepass
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async update(
         universeId: number,
         gamePassId: number,
-        options: GamepassOptions & { storePageEnabled?: boolean },
+        options: GamepassOptions,
     ): Promise<any> {
         const data = await this.request({
             method: RequestTypes.Patch,
@@ -391,13 +393,13 @@ export class GamepassesManager extends BaseManager {
     }
 
     /**
-     * Gets all developer products for a given universe.
+     * Gets all gamepasses for a given universe.
      * @param universeId {number} The universe ID
-     * @returns DeveloperProduct[]
+     * @returns Gamepass[]
      * @beta This API Endpoint is currently in beta and may change at any time
      */
     async getAll(universeId: number): Promise<Gamepass[]> {
-        const allProducts: GamepassData[] | Gamepass[] = [];
+        const allGamepasses: GamepassData[] | Gamepass[] = [];
 
         let pageToken: string | undefined = undefined;
 
@@ -414,11 +416,11 @@ export class GamepassesManager extends BaseManager {
                 params,
             });
 
-            allProducts.push(...response.gamePasses);
+            allGamepasses.push(...response.gamePasses);
             pageToken = response.nextPageToken;
         } while (pageToken);
 
-        return Promise.all(allProducts.map((data) => this._convert(data)));
+        return Promise.all(allGamepasses.map((data) => this._convert(data)));
     }
 
     async getIcons(
