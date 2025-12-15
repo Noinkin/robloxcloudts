@@ -1,0 +1,18 @@
+- Gamepass and Developer Product Builder
+- More endpoints
+- Better polling & caching
+- Messaging service link to game servers
+- Websocket/webhook capabilities
+- Better ratelimiting
+- On events(mainly for gamepass and DP) for all universes
+- Full Typings
+- Jest(or equivalent) for testing
+- More caching
+- Better polling comparison
+- Better filtering and compareBy for polling
+- More polling lifecycle events
+- Support gamepass builder in functions, and allow Gamepass to be inputted into GamepassBuilder constructor
+- Allow gamepass builder in update using method above
+- Get All filtering
+- More event hooks for polling events
+- More utilities where required
