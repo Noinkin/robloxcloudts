@@ -1,7 +1,7 @@
 - Gamepass and Developer Product Builder
 - More endpoints
 - Better polling & caching
-- Messaging service link to game servers
+- Messaging service link to game servers(CUSTOM GAME EVENTS)
 - Websocket/webhook capabilities
 - Better ratelimiting
 - On events(mainly for gamepass and DP) for all universes
