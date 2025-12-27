@@ -17,11 +17,9 @@
     "types": "src/index.ts",
     "scripts": {
         "build": "npx prettier . --write && tsc",
-        "start": "node dist/cli/index.js",
-        "dev": "ts-node src/cli/index.ts",
-        "test": "node dist/test/test.js",
         "docs:build": "npx prettier . --write && tsc && npx typedoc",
-        "format": "npx prettier . --write"
+        "format": "npx prettier . --write",
+        "prepare": "npm run build"
     },
     "devDependencies": {
         "@types/node": "^25.0.0",
